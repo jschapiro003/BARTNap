@@ -28,7 +28,7 @@ class ViewController: UIViewController, NSXMLParserDelegate {
         
         
         
-        if let xmlParser = parser?{
+         var xmlParser = parser
 
             xmlParser.delegate = self
 
@@ -46,7 +46,7 @@ class ViewController: UIViewController, NSXMLParserDelegate {
                     }
                 
                 })
-        }
+        
         println("no longer in the background")
         
        
