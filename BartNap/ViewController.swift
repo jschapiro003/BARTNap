@@ -36,21 +36,23 @@ class ViewController: UIViewController, NSXMLParserDelegate {
         var url:String="http://api.bart.gov/api/stn.aspx?cmd=stns&key=QALV-U3SB-I56Q-DT35"
         var urlToSend: NSURL = NSURL(string: url)
         // Parse the XML
-        var parser = NSXMLParser(contentsOfURL: urlToSend)
-        parser.delegate = self
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
+            var parser = NSXMLParser(contentsOfURL: urlToSend)
+            parser.delegate = self
         
-        var success:Bool = parser.parse()
+            var success:Bool = parser.parse()
         
-        if success {
-            println("parse success!")
+            if success {
+                println("parse success!")
             
-            println(strXMLData)
+                println(self.strXMLData)
             
             //lblNameData.text=strXMLData
             
-        } else {
-            println("parse failure!")
-        }
+            } else {
+                println("parse failure!")
+            }
+        })
         
         
         /*if let xmlParser:NSXMLParser = self.parser? {
