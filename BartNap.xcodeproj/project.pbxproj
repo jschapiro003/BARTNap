@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3168E11219FD7C8D0069C520 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168E11119FD7C8D0069C520 /* Station.swift */; };
+		3168E11519FD7FD60069C520 /* EstimatedTimeDeparture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168E11419FD7FD60069C520 /* EstimatedTimeDeparture.swift */; };
+		3168E11719FD7FED0069C520 /* ScheduleInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168E11619FD7FED0069C520 /* ScheduleInformation.swift */; };
 		31726B3B19F2F5B900FDAFE9 /* BARTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31726B3A19F2F5B900FDAFE9 /* BARTClient.swift */; };
 		3187900619EA296500455502 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187900519EA296500455502 /* AppDelegate.swift */; };
 		3187900819EA296500455502 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187900719EA296500455502 /* ViewController.swift */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		3168E11119FD7C8D0069C520 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		3168E11419FD7FD60069C520 /* EstimatedTimeDeparture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimatedTimeDeparture.swift; sourceTree = "<group>"; };
+		3168E11619FD7FED0069C520 /* ScheduleInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleInformation.swift; sourceTree = "<group>"; };
 		31726B3A19F2F5B900FDAFE9 /* BARTClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BARTClient.swift; sourceTree = "<group>"; };
 		3187900019EA296500455502 /* BartNap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BartNap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3187900419EA296500455502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +64,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3168E11319FD7F9A0069C520 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3168E11119FD7C8D0069C520 /* Station.swift */,
+				3168E11419FD7FD60069C520 /* EstimatedTimeDeparture.swift */,
+				3168E11619FD7FED0069C520 /* ScheduleInformation.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		31878FF719EA296400455502 = {
 			isa = PBXGroup;
 			children = (
@@ -81,8 +95,8 @@
 		3187900219EA296500455502 /* BartNap */ = {
 			isa = PBXGroup;
 			children = (
+				3168E11319FD7F9A0069C520 /* Model */,
 				3187900519EA296500455502 /* AppDelegate.swift */,
-				3168E11119FD7C8D0069C520 /* Station.swift */,
 				3187900719EA296500455502 /* ViewController.swift */,
 				3187900919EA296500455502 /* Main.storyboard */,
 				3187900C19EA296500455502 /* Images.xcassets */,
@@ -218,8 +232,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3168E11519FD7FD60069C520 /* EstimatedTimeDeparture.swift in Sources */,
 				31726B3B19F2F5B900FDAFE9 /* BARTClient.swift in Sources */,
 				3187900819EA296500455502 /* ViewController.swift in Sources */,
+				3168E11719FD7FED0069C520 /* ScheduleInformation.swift in Sources */,
 				3168E11219FD7C8D0069C520 /* Station.swift in Sources */,
 				3187900619EA296500455502 /* AppDelegate.swift in Sources */,
 			);
