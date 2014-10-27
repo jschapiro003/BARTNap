@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  SwiftXMLParsingDemo
 //
-
+/*
 import UIKit
 
 class ViewController: UIViewController, NSXMLParserDelegate {
@@ -14,7 +14,7 @@ class ViewController: UIViewController, NSXMLParserDelegate {
     
     
     
-    let parser:NSXMLParser? = NSXMLParser(contentsOfURL: NSURL(string:"http://api.bart.gov/api/stn.aspx?cmd=stns&key=QALV-U3SB-I56Q-DT35" ))
+   // let parser:NSXMLParser? = NSXMLParser(contentsOfURL: NSURL(string:"http://api.bart.gov/api/stn.aspx?cmd=stns&key=QALV-U3SB-I56Q-DT35" ))
     var parseSuccess:Bool = true
     var stations = Array<Station>()
     
@@ -63,7 +63,7 @@ class ViewController: UIViewController, NSXMLParserDelegate {
                 println("parse failure!")
             }
         })
-        
+
         
         /*if let xmlParser:NSXMLParser = self.parser? {
             
@@ -259,4 +259,4 @@ class ViewController: UIViewController, NSXMLParserDelegate {
         }
     }
     
-}
+}*/

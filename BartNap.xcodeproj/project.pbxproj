@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3134354519FE173B00596207 /* ToFromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3134354419FE173B00596207 /* ToFromViewController.swift */; };
 		3168E11219FD7C8D0069C520 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168E11119FD7C8D0069C520 /* Station.swift */; };
 		3168E11519FD7FD60069C520 /* EstimatedTimeDeparture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168E11419FD7FD60069C520 /* EstimatedTimeDeparture.swift */; };
 		3168E11719FD7FED0069C520 /* ScheduleInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168E11619FD7FED0069C520 /* ScheduleInformation.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3134354419FE173B00596207 /* ToFromViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToFromViewController.swift; sourceTree = "<group>"; };
 		3168E11119FD7C8D0069C520 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		3168E11419FD7FD60069C520 /* EstimatedTimeDeparture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimatedTimeDeparture.swift; sourceTree = "<group>"; };
 		3168E11619FD7FED0069C520 /* ScheduleInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleInformation.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				3187900E19EA296500455502 /* LaunchScreen.xib */,
 				3187900319EA296500455502 /* Supporting Files */,
 				31726B3A19F2F5B900FDAFE9 /* BARTClient.swift */,
+				3134354419FE173B00596207 /* ToFromViewController.swift */,
 			);
 			path = BartNap;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			files = (
 				3168E11519FD7FD60069C520 /* EstimatedTimeDeparture.swift in Sources */,
 				31726B3B19F2F5B900FDAFE9 /* BARTClient.swift in Sources */,
+				3134354519FE173B00596207 /* ToFromViewController.swift in Sources */,
 				3187900819EA296500455502 /* ViewController.swift in Sources */,
 				3168E11719FD7FED0069C520 /* ScheduleInformation.swift in Sources */,
 				3168E11219FD7C8D0069C520 /* Station.swift in Sources */,
