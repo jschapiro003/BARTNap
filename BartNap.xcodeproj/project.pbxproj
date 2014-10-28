@@ -18,6 +18,7 @@
 		3187900D19EA296500455502 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3187900C19EA296500455502 /* Images.xcassets */; };
 		3187901019EA296500455502 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3187900E19EA296500455502 /* LaunchScreen.xib */; };
 		3187901C19EA296500455502 /* BartNapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187901B19EA296500455502 /* BartNapTests.swift */; };
+		31B3B78119FF4B1E007AFA64 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B3B78019FF4B1E007AFA64 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		3187901519EA296500455502 /* BartNapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BartNapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3187901A19EA296500455502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3187901B19EA296500455502 /* BartNapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BartNapTests.swift; sourceTree = "<group>"; };
+		31B3B78019FF4B1E007AFA64 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				3187900319EA296500455502 /* Supporting Files */,
 				31726B3A19F2F5B900FDAFE9 /* BARTClient.swift */,
 				3134354419FE173B00596207 /* ToFromViewController.swift */,
+				31B3B78019FF4B1E007AFA64 /* TestViewController.swift */,
 			);
 			path = BartNap;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			files = (
 				3168E11519FD7FD60069C520 /* EstimatedTimeDeparture.swift in Sources */,
 				31726B3B19F2F5B900FDAFE9 /* BARTClient.swift in Sources */,
+				31B3B78119FF4B1E007AFA64 /* TestViewController.swift in Sources */,
 				3134354519FE173B00596207 /* ToFromViewController.swift in Sources */,
 				3187900819EA296500455502 /* ViewController.swift in Sources */,
 				3168E11719FD7FED0069C520 /* ScheduleInformation.swift in Sources */,

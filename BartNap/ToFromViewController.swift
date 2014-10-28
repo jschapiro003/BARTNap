@@ -8,16 +8,10 @@
 
 import UIKit
 
+
+
 class ToFromViewController: UIViewController, NSXMLParserDelegate {
 
-    
-    var strXMLData:String = ""
-    var currentElement:String = ""
-    var passData:Bool=false
-    var passName:Bool=false
-    
-    
-    
      let parser:NSXMLParser? = NSXMLParser(contentsOfURL: NSURL(string:"http://api.bart.gov/api/stn.aspx?cmd=stns&key=QALV-U3SB-I56Q-DT35" ))
     var parseSuccess:Bool = true
     var stations = Array<Station>()
@@ -39,7 +33,12 @@ class ToFromViewController: UIViewController, NSXMLParserDelegate {
         
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
                 println("we are in the background queue")
+                
+                
                 self.parseSuccess = xmlParser.parse()
+                
+                
+                
                 for station in self.stations{
                     if let sn = station.name?{
                         println("station name:\(sn)")
@@ -66,13 +65,8 @@ class ToFromViewController: UIViewController, NSXMLParserDelegate {
     
     
     func parser(parser: NSXMLParser!,didStartElement elementName: String!, namespaceURI: String!, qualifiedName : String!, attributes attributeDict: NSDictionary!) {
-        currentElement=elementName;
-        if(elementName=="station" || elementName=="name" || elementName=="abbr" || elementName=="gtfs_latitude" || elementName=="gtfs_longitude")
-        {
-            if(elementName=="station"){
-                passName=true;
-            }
-            passData=true;
+       
+       
             
             //check to see if the staion name element exists
             self.stationName = (elementName == "name")
@@ -85,8 +79,7 @@ class ToFromViewController: UIViewController, NSXMLParserDelegate {
             
             //check to see if gtfs longitude exists
             self.stationLongitude = (elementName == "gtfs_longitude")
-            
-        }
+      
     }
     
     
