@@ -10,11 +10,16 @@ import UIKit
 
 
 
-class ToFromViewController: UIViewController, NSXMLParserDelegate {
+class ToFromViewController: UIViewController, NSXMLParserDelegate, UIPickerViewDelegate {
 
      let parser:NSXMLParser? = NSXMLParser(contentsOfURL: NSURL(string:"http://api.bart.gov/api/stn.aspx?cmd=stns&key=QALV-U3SB-I56Q-DT35" ))
     var parseSuccess:Bool = true
     var stations = Array<Station>()
+    
+    //Control parsing flow
+    var currentElement:String = ""
+    var passData:Bool=false
+    var passName:Bool=false
     
     //station variables to check an XML Elements value
     var stationName:Bool?
@@ -25,7 +30,7 @@ class ToFromViewController: UIViewController, NSXMLParserDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("hello world")
+        println("Pick view")
         
         if let xmlParser:NSXMLParser = self.parser? {
         
@@ -80,6 +85,17 @@ class ToFromViewController: UIViewController, NSXMLParserDelegate {
             //check to see if gtfs longitude exists
             self.stationLongitude = (elementName == "gtfs_longitude")
       
+    }
+    
+    func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!) {
+        currentElement="";
+        if(elementName=="station" || elementName=="name" || elementName=="abbr" || elementName=="gtfs_latitude" || elementName=="gtfs_longitude")
+        {
+            if(elementName=="station"){
+                passName=false;
+            }
+            passData=false;
+        }
     }
     
     
@@ -139,14 +155,20 @@ class ToFromViewController: UIViewController, NSXMLParserDelegate {
     
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // returns the number of 'columns' to display.
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
     }
-    */
+    
+    // returns the # of rows in each component..
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return stations.count
+        //return 2
+    }
 
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return stations[row].name
+        //return "fila \(row)"
+    }
+    
 }

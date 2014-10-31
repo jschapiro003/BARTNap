@@ -55,7 +55,7 @@
         <!--Take a new Nap-->
         <scene sceneID="Dnr-Px-sF4">
             <objects>
-                <viewController id="7Ua-8T-FQ8" sceneMemberID="viewController">
+                <viewController id="7Ua-8T-FQ8" customClass="ToFromViewController" customModule="BartNap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FjB-jG-Uiy"/>
                         <viewControllerLayoutGuide type="bottom" id="p9b-yr-oaJ"/>
@@ -98,6 +98,9 @@
                                 <rect key="frame" x="109" y="174" width="200" height="162"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.7703412369" green="0.59881055350000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7Ua-8T-FQ8" id="fnq-9r-anV"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minutes Prior to Destination:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYo-eG-7ui">
                                 <rect key="frame" x="48" y="344" width="225" height="21"/>
@@ -120,6 +123,9 @@
                                 <rect key="frame" x="109" y="82" width="200" height="162"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.7703412369" green="0.59881055350000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7Ua-8T-FQ8" id="HnI-Y9-R4Y"/>
+                                </connections>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.029743789649381985" green="0.087106139174170455" blue="0.43270210597826086" alpha="1" colorSpace="calibratedRGB"/>
