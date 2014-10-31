@@ -7,18 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3134354519FE173B00596207 /* ToFromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3134354419FE173B00596207 /* ToFromViewController.swift */; };
+		315DE3161A01A64300BC4EB7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315DE3151A01A64300BC4EB7 /* HomeViewController.swift */; };
 		3168E11219FD7C8D0069C520 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168E11119FD7C8D0069C520 /* Station.swift */; };
 		3168E11519FD7FD60069C520 /* EstimatedTimeDeparture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168E11419FD7FD60069C520 /* EstimatedTimeDeparture.swift */; };
 		3168E11719FD7FED0069C520 /* ScheduleInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168E11619FD7FED0069C520 /* ScheduleInformation.swift */; };
 		31726B3B19F2F5B900FDAFE9 /* BARTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31726B3A19F2F5B900FDAFE9 /* BARTClient.swift */; };
 		3187900619EA296500455502 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187900519EA296500455502 /* AppDelegate.swift */; };
-		3187900819EA296500455502 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187900719EA296500455502 /* ViewController.swift */; };
 		3187900B19EA296500455502 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3187900919EA296500455502 /* Main.storyboard */; };
 		3187900D19EA296500455502 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3187900C19EA296500455502 /* Images.xcassets */; };
 		3187901019EA296500455502 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3187900E19EA296500455502 /* LaunchScreen.xib */; };
 		3187901C19EA296500455502 /* BartNapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187901B19EA296500455502 /* BartNapTests.swift */; };
-		31B3B78119FF4B1E007AFA64 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B3B78019FF4B1E007AFA64 /* TestViewController.swift */; };
+		31898B491A02FF46009BC1DA /* TakeANapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31898B481A02FF46009BC1DA /* TakeANapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3134354419FE173B00596207 /* ToFromViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToFromViewController.swift; sourceTree = "<group>"; };
+		315DE3151A01A64300BC4EB7 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3168E11119FD7C8D0069C520 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		3168E11419FD7FD60069C520 /* EstimatedTimeDeparture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimatedTimeDeparture.swift; sourceTree = "<group>"; };
 		3168E11619FD7FED0069C520 /* ScheduleInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleInformation.swift; sourceTree = "<group>"; };
@@ -40,14 +39,13 @@
 		3187900019EA296500455502 /* BartNap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BartNap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3187900419EA296500455502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3187900519EA296500455502 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3187900719EA296500455502 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3187900A19EA296500455502 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3187900C19EA296500455502 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3187900F19EA296500455502 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3187901519EA296500455502 /* BartNapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BartNapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3187901A19EA296500455502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3187901B19EA296500455502 /* BartNapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BartNapTests.swift; sourceTree = "<group>"; };
-		31B3B78019FF4B1E007AFA64 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		31898B481A02FF46009BC1DA /* TakeANapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeANapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,16 +97,14 @@
 		3187900219EA296500455502 /* BartNap */ = {
 			isa = PBXGroup;
 			children = (
+				31898B471A02FEB5009BC1DA /* Controllers */,
+				31898B461A02FDC6009BC1DA /* API */,
 				3168E11319FD7F9A0069C520 /* Model */,
 				3187900519EA296500455502 /* AppDelegate.swift */,
-				3187900719EA296500455502 /* ViewController.swift */,
 				3187900919EA296500455502 /* Main.storyboard */,
 				3187900C19EA296500455502 /* Images.xcassets */,
 				3187900E19EA296500455502 /* LaunchScreen.xib */,
 				3187900319EA296500455502 /* Supporting Files */,
-				31726B3A19F2F5B900FDAFE9 /* BARTClient.swift */,
-				3134354419FE173B00596207 /* ToFromViewController.swift */,
-				31B3B78019FF4B1E007AFA64 /* TestViewController.swift */,
 			);
 			path = BartNap;
 			sourceTree = "<group>";
@@ -136,6 +132,23 @@
 				3187901A19EA296500455502 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		31898B461A02FDC6009BC1DA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				31726B3A19F2F5B900FDAFE9 /* BARTClient.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		31898B471A02FEB5009BC1DA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				315DE3151A01A64300BC4EB7 /* HomeViewController.swift */,
+				31898B481A02FF46009BC1DA /* TakeANapViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,10 +253,9 @@
 			files = (
 				3168E11519FD7FD60069C520 /* EstimatedTimeDeparture.swift in Sources */,
 				31726B3B19F2F5B900FDAFE9 /* BARTClient.swift in Sources */,
-				31B3B78119FF4B1E007AFA64 /* TestViewController.swift in Sources */,
-				3134354519FE173B00596207 /* ToFromViewController.swift in Sources */,
-				3187900819EA296500455502 /* ViewController.swift in Sources */,
+				315DE3161A01A64300BC4EB7 /* HomeViewController.swift in Sources */,
 				3168E11719FD7FED0069C520 /* ScheduleInformation.swift in Sources */,
+				31898B491A02FF46009BC1DA /* TakeANapViewController.swift in Sources */,
 				3168E11219FD7C8D0069C520 /* Station.swift in Sources */,
 				3187900619EA296500455502 /* AppDelegate.swift in Sources */,
 			);
