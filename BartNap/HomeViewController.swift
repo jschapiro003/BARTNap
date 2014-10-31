@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
     //delegate to send the stations array to the UIPickerView of the TakeANapViewController :)
     var delegate:SendDataDelegate? = nil
     
-    var stationsArray = Array <Station>()
+    var stationsArray = Array<Station>()
     
     override func viewDidLoad() {
         super.viewDidLoad()

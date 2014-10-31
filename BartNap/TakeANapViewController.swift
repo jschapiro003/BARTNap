@@ -8,11 +8,11 @@
 
 import UIKit
 
-class TakeANapViewController: UIViewController, SendDataDelegate{
+var stationsArray = Array<Station>()
 
-    var stationsArray = Array <Station>()
+class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDelegate{
+
    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class TakeANapViewController: UIViewController, SendDataDelegate{
     func passStationsArray(array: Array<Station>) {
         stationsArray = array
     
-        for station in self.stationsArray{
+        for station in stationsArray{
             if let sn = station.name?{
                 println("station name:\(sn)")
             }
@@ -40,20 +40,26 @@ class TakeANapViewController: UIViewController, SendDataDelegate{
         }
     }
 
+    // returns the number of 'columns' to display.
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
     
+    // returns the # of rows in each component..
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return stationsArray.count
+        //return 12
     }
-
-
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return stationsArray[row].name
+        //return "fila \(row)"
     }
-    */
+    
+}
+
+
+
 
 
