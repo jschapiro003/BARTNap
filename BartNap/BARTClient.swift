@@ -21,7 +21,7 @@ class BARTClient: NSObject, NSXMLParserDelegate {
     var stationAbbreviation:Bool?
     var stationLatitude:Bool?
     var stationLongitude:Bool?
-
+    
     class var sharedInstance: BARTClient {
         struct Static{
             static let instance =  BARTClient()
@@ -33,24 +33,23 @@ class BARTClient: NSObject, NSXMLParserDelegate {
     
     func getStations()->Array<Station>{
         
-        println("what's wrong?")
+       
         parser = NSXMLParser(contentsOfURL: NSURL(string:"http://api.bart.gov/api/stn.aspx?cmd=stns&key=QALV-U3SB-I56Q-DT35" ))!
         println(parser)
         if let xmlParser = parser?{
-            println("we are here")
             xmlParser.delegate = self
             xmlParser.parse()
         }
         
         
         return stations
-    
+        
     }
     
     func getScheduleInfo(){
         
         parser = NSXMLParser(contentsOfURL: NSURL(string: "http://api.bart.gov/api/route.aspx?cmd=routes&key=MW9S-E7SL-26DU-VV8V"))!
-        println("still go it for ya \(parser)")
+        
     }
     
     
@@ -127,6 +126,6 @@ class BARTClient: NSObject, NSXMLParserDelegate {
         NSLog("failure error: %@", parseError)
     }
     
-
-
+    
+    
 }
