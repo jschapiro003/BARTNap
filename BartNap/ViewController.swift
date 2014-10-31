@@ -34,10 +34,11 @@ class ViewController: UIViewController, NSXMLParserDelegate {
         
         /*var url:String="http://api.bart.gov/api/route.aspx?cmd=routes&key=MW9S-E7SL-26DU-VV8V"*/
         var url:String="http://api.bart.gov/api/stn.aspx?cmd=stns&key=QALV-U3SB-I56Q-DT35"
-        var urlToSend: NSURL = NSURL(string: url)
+        var urlToSend: NSURL = NSURL(string: url)!
         // Parse the XML
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
-            var parser = NSXMLParser(contentsOfURL: urlToSend)
+            var parser = NSXMLParser(contentsOfURL: urlToSend)!
+
             parser.delegate = self
         
             var success:Bool = parser.parse()
