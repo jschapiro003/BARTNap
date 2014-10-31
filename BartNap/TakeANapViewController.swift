@@ -57,6 +57,18 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
         //return "fila \(row)"
     }
     
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        var itemSelected = stationsArray[row].abbreviation
+        if pickerView.tag == 101 {
+            println("Selected origin \(itemSelected)")
+        } else if pickerView.tag == 102 {
+            println("Selected destination \(itemSelected)")
+        }
+        
+        
+    }
+    
 }
 
 

@@ -105,15 +105,15 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="88W-en-MOB">
+                            <pickerView opaque="NO" tag="101" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="88W-en-MOB">
                                 <rect key="frame" x="107" y="75" width="197" height="162"/>
                                 <color key="backgroundColor" red="0.050980396568775177" green="0.70588237047195435" blue="0.90196084976196289" alpha="1" colorSpace="deviceRGB"/>
-                                <color key="tintColor" red="0.18039216101169586" green="0.078431375324726105" blue="0.7568628191947937" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="7Ua-8T-FQ8" id="OzP-tN-KXn"/>
                                 </connections>
                             </pickerView>
-                            <pickerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pmE-hX-S1i">
+                            <pickerView opaque="NO" tag="102" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pmE-hX-S1i">
                                 <rect key="frame" x="107" y="245" width="197" height="162"/>
                                 <color key="backgroundColor" red="0.050980396568775177" green="0.70588237047195435" blue="0.90196084976196289" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
