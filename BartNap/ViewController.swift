@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  SwiftXMLParsingDemo
 //
-
+/*
 import UIKit
 
 class ViewController: UIViewController, NSXMLParserDelegate {
@@ -14,7 +14,7 @@ class ViewController: UIViewController, NSXMLParserDelegate {
     
     
     
-    let parser:NSXMLParser? = NSXMLParser(contentsOfURL: NSURL(string:"http://api.bart.gov/api/stn.aspx?cmd=stns&key=QALV-U3SB-I56Q-DT35" ))
+   // let parser:NSXMLParser? = NSXMLParser(contentsOfURL: NSURL(string:"http://api.bart.gov/api/stn.aspx?cmd=stns&key=QALV-U3SB-I56Q-DT35" ))
     var parseSuccess:Bool = true
     var stations = Array<Station>()
     
@@ -31,7 +31,7 @@ class ViewController: UIViewController, NSXMLParserDelegate {
         //there answers will give the requirements for a call to the schedule info API
         //we will pass these values along next view controller, where timer calculations will be done
         
-        
+
         /*var url:String="http://api.bart.gov/api/route.aspx?cmd=routes&key=MW9S-E7SL-26DU-VV8V"*/
         var url:String="http://api.bart.gov/api/stn.aspx?cmd=stns&key=QALV-U3SB-I56Q-DT35"
         var urlToSend: NSURL = NSURL(string: url)!
@@ -64,7 +64,7 @@ class ViewController: UIViewController, NSXMLParserDelegate {
                 println("parse failure!")
             }
         })
-        
+
         
         /*if let xmlParser:NSXMLParser = self.parser? {
             
@@ -260,4 +260,4 @@ class ViewController: UIViewController, NSXMLParserDelegate {
         }
     }
     
-}
+}*/

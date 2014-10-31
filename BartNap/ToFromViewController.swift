@@ -1,18 +1,18 @@
 //
-//  BARTClient.swift
+//  ToFromViewController.swift
 //  BartNap
 //
-//  Created by Jonathan Schapiro on 10/18/14.
+//  Created by Jonathan Schapiro on 10/26/14.
 //  Copyright (c) 2014 Jonathan Schapiro. All rights reserved.
 //
 
 import UIKit
 
-class BARTClient: NSObject, NSXMLParserDelegate {
-    
-    
-    
-    var parser:NSXMLParser?
+
+
+class ToFromViewController: UIViewController, NSXMLParserDelegate {
+
+     let parser:NSXMLParser? = NSXMLParser(contentsOfURL: NSURL(string:"http://api.bart.gov/api/stn.aspx?cmd=stns&key=QALV-U3SB-I56Q-DT35" ))
     var parseSuccess:Bool = true
     var stations = Array<Station>()
     
@@ -21,55 +21,65 @@ class BARTClient: NSObject, NSXMLParserDelegate {
     var stationAbbreviation:Bool?
     var stationLatitude:Bool?
     var stationLongitude:Bool?
-
-    class var sharedInstance: BARTClient {
-        struct Static{
-            static let instance =  BARTClient()
-        }
-        return Static.instance
-    }
     
     
-    
-    func getStations()->Array<Station>{
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        println("hello world")
         
-        println("what's wrong?")
-        parser = NSXMLParser(contentsOfURL: NSURL(string:"http://api.bart.gov/api/stn.aspx?cmd=stns&key=QALV-U3SB-I56Q-DT35" ))!
-        println(parser)
-        if let xmlParser = parser?{
-            println("we are here")
+        if let xmlParser:NSXMLParser = self.parser? {
+        
             xmlParser.delegate = self
-            xmlParser.parse()
+        
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
+                println("we are in the background queue")
+                
+                
+                self.parseSuccess = xmlParser.parse()
+                
+                
+                
+                for station in self.stations{
+                    if let sn = station.name?{
+                        println("station name:\(sn)")
+                    }
+                    if let sa = station.abbreviation?{
+                        println("station abbreviation \(sa)")
+                    }
+        
+                }
+        
+            })
         }
+                println("no longer in the background")
         
-        
-        return stations
-    
+
+
+        // Do any additional setup after loading the view.
     }
-    
-    func getScheduleInfo(){
-        
-        parser = NSXMLParser(contentsOfURL: NSURL(string: "http://api.bart.gov/api/route.aspx?cmd=routes&key=MW9S-E7SL-26DU-VV8V"))!
-        println("still go it for ya \(parser)")
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     
     func parser(parser: NSXMLParser!,didStartElement elementName: String!, namespaceURI: String!, qualifiedName : String!, attributes attributeDict: NSDictionary!) {
-        
-        
-        
-        //check to see if the staion name element exists
-        self.stationName = (elementName == "name")
-        
-        //check to see if station abbreviation exists
-        self.stationAbbreviation = (elementName == "abbr")
-        
-        //check to see if gtfs latitude exists
-        self.stationLatitude = (elementName == "gtfs_latitude")
-        
-        //check to see if gtfs longitude exists
-        self.stationLongitude = (elementName == "gtfs_longitude")
-        
+       
+       
+            
+            //check to see if the staion name element exists
+            self.stationName = (elementName == "name")
+            
+            //check to see if station abbreviation exists
+            self.stationAbbreviation = (elementName == "abbr")
+            
+            //check to see if gtfs latitude exists
+            self.stationLatitude = (elementName == "gtfs_latitude")
+            
+            //check to see if gtfs longitude exists
+            self.stationLongitude = (elementName == "gtfs_longitude")
+      
     }
     
     
@@ -84,7 +94,7 @@ class BARTClient: NSObject, NSXMLParserDelegate {
         //grab each station
         if let stationFound = self.stationName?{
             if(stationFound){
-                //println("Name:\(string)")
+                // println("Name:\(string)")
                 currentStationName = string
             }
         }
@@ -128,5 +138,15 @@ class BARTClient: NSObject, NSXMLParserDelegate {
     }
     
 
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }
