@@ -28,6 +28,12 @@ class BARTClient: NSObject, NSXMLParserDelegate {
     var passData:Bool=false
     var passName:Bool=false
     
+    //temporary variables to hold the current value of a station property
+    var currentStationName:String?
+    var currentAbbreviationName:String?
+    var currentLatitudeName:String?
+    var currentLongitudeName:String?
+    
     class var sharedInstance: BARTClient {
         struct Static{
             static let instance =  BARTClient()
@@ -66,9 +72,9 @@ class BARTClient: NSObject, NSXMLParserDelegate {
         if(elementName=="station" || elementName=="name" || elementName=="abbr" || elementName=="gtfs_latitude" || elementName=="gtfs_longitude")
         {
             if(elementName=="station"){
-                passName=true;
+                passName=true
             }
-            passData=true;
+            passData=true
             //check to see if the staion name element exists
             self.stationName = (elementName == "name")
         
@@ -88,20 +94,20 @@ func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceU
     if(elementName=="station" || elementName=="name" || elementName=="abbr" || elementName=="gtfs_latitude" || elementName=="gtfs_longitude")
     {
         if(elementName=="station"){
-            passName=false;
+            passName=false
+            //create new station and populate it
+            var station:Station = Station(name: currentStationName, abbreviation: currentAbbreviationName, latitude: currentLatitudeName, longitude: currentLongitudeName)
+            // add that station to the stations array
+            stations.append(station)
         }
-        passData=false;
+        passData=false
     }
 }
 
 
     func parser(parser: NSXMLParser, foundCharacters string: String) {
         
-        //temporary variables to hold the current value of a station property
-        var currentStationName:String?
-        var currentAbbreviationName:String?
-        var currentLatitudeName:String?
-        var currentLongitudeName:String?
+
         
         if(passName){
             //grab each station
@@ -135,13 +141,6 @@ func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceU
                     currentLongitudeName = string
                 }
             }
-            
-            //create new station and populate it
-            
-            var station:Station = Station(name: currentStationName, abbreviation: currentAbbreviationName, latitude: currentLatitudeName, longitude: currentLongitudeName)
-            
-            // add that station to the stations array
-            stations.append(station)
         }
         
     }
