@@ -72,7 +72,12 @@ class BARTClient: NSObject, NSXMLParserDelegate {
         
     }
     
-    //Gets legs of schedule according origin and destination stations abbr given
+    /*Gets array of legs of schedule according given origin and destination stations abbr
+    each element of array has
+    var legTrainHeadStation:String?
+    var legDestination:String?
+    var legTransfercode:String?
+    */
     func getScheduleInfo( origin: String!, dest: String!)->Array<ScheduleInformation>{
         
         self.origin = origin
@@ -131,12 +136,12 @@ class BARTClient: NSObject, NSXMLParserDelegate {
             if(elementName=="schedule"){
                 parsingSchedules=true
             }
-            
+            //Start collecting legs, there is a trip
             if(elementName=="trip" && parsingSchedules){
                 passObject=true
             }
             passData=true
-            //check to see if trip exists
+            //get attributes of the leg, this one doesn't work with foundCharacters func
             if(elementName=="leg" && parsingSchedules){
                 legFound=true
                 legDestination = attributeDict["destination"] as String?
@@ -178,7 +183,7 @@ func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceU
             legs.append(leg)
         }
         passData=false
-        //Parsing stations ended
+        //Parsing Schedules ended
         if(elementName=="schedule"){
             parsingSchedules=false
         }

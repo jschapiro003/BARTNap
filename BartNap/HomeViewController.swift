@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
     
     var stationsArray = Array<Station>()
     
-    //Variable to get legs of the trip
+    //Variable to get legs of the trip for testing, can be removed later
     var legsArray = Array<ScheduleInformation>()
     
     override func viewDidLoad() {
@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
             
             self.stationsArray = BARTClient.sharedInstance.getStations()
             //Test schedules parsing
-            self.legsArray = BARTClient.sharedInstance.getScheduleInfo("DBRK",dest:"ROCK")
+            //self.legsArray = BARTClient.sharedInstance.getScheduleInfo("DBRK",dest:"ROCK")
             
         });
         // Do any additional setup after loading the view.

@@ -131,6 +131,10 @@
                         <color key="backgroundColor" red="0.029743789649381985" green="0.087106139174170455" blue="0.43270210597826086" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Take a new Nap" id="5gz-91-aTV"/>
+                    <connections>
+                        <outlet property="fromPickerView" destination="88W-en-MOB" id="Zfm-Zp-yIR"/>
+                        <outlet property="toPickerView" destination="pmE-hX-S1i" id="dKm-S1-H0v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AkH-kD-FTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

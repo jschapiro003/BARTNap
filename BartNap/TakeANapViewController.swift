@@ -9,10 +9,17 @@
 import UIKit
 
 var stationsArray = Array<Station>()
+var originSelected:String?
+var destSelected:String?
 
 class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDelegate{
 
+    //Variable to get legs of the trip
+    var legsArray = Array<ScheduleInformation>()
+    
+    @IBOutlet weak var fromPickerView: UIPickerView!
    
+    @IBOutlet weak var toPickerView: UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,18 +64,32 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
         //return "fila \(row)"
     }
     
+    //Gets the stations selected in pickerviews
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         var itemSelected = stationsArray[row].abbreviation
-        if pickerView.tag == 101 {
+        if pickerView == fromPickerView {
+            originSelected = itemSelected
             println("Selected origin \(itemSelected)")
-        } else if pickerView.tag == 102 {
+        } else if pickerView == toPickerView {
+            destSelected = itemSelected
             println("Selected destination \(itemSelected)")
         }
-        
-        
     }
     
+    //Get legs according selected stations
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "openNapCounter" {
+
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
+                
+                //schedules parsing
+                self.legsArray = BARTClient.sharedInstance.getScheduleInfo(originSelected!, dest: destSelected!)
+                
+            });
+            
+        }
+    }
 }
 
 
