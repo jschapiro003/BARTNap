@@ -10,7 +10,7 @@ import UIKit
 
 class Station: NSObject {
     
-    let endPoint:String = "http://api.bart.gov/api/stn.aspx?cmd=stns&key=QALV-U3SB-I56Q-DT35"
+    let endPoint:String = "http://api.bart.gov/api/stn.aspx?cmd=stns&key="+APIKey
     //properties of a station
     var name: String?
     var abbreviation: String?

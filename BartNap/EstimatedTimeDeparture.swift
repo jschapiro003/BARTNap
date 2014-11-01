@@ -10,4 +10,8 @@ import UIKit
 
 class EstimatedTimeDeparture: NSObject {
    
+    // in call to API Endpoint we must specify the orig=<station>
+    var estimate:Int?
+    var platform:Int?
+    var direction:String?
 }

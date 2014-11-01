@@ -11,11 +11,24 @@ import UIKit
 class ScheduleInformation: NSObject {
     
     
-
-    // in call to API Endpoint we must specify the orig=<station>   
-    var estimate:Int?
-    var platform:Int?
-    var direction:String?
+    //Get legs of trip form origin to destination
     
+    
+    var origin:String?
+    var destination:String?
+    var leg:String?
+    var trip:String?
+
+    init(origin: String?, destination: String?, leg: String?){
+        
+        self.origin = origin
+        self.destination = destination
+        self.leg = leg
+        
+    }
+    
+    func newSchedule(legFound:Bool?, elementName: String){
+        
+    }
    
 }
