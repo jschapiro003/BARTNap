@@ -122,71 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BartNap/BARTClient.swift"
-            timestampString = "436494698.523954"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "parser(_:didStartElement:namespaceURI:qualifiedName:attributes:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BartNap/BARTClient.swift"
-            timestampString = "436494867.234023"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "230"
-            endingLineNumber = "230"
-            landmarkName = "parser(_:foundCharacters:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BartNap/BARTClient.swift"
-            timestampString = "436494872.954474"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
-            landmarkName = "parser(_:foundCharacters:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BartNap/BARTClient.swift"
-            timestampString = "436494885.894064"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "parser(_:didStartElement:namespaceURI:qualifiedName:attributes:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BartNap/BARTClient.swift"
-            timestampString = "436494887.204163"
+            timestampString = "436513866.057655"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "138"
@@ -202,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BartNap/BARTClient.swift"
-            timestampString = "436494889.247925"
+            timestampString = "436513866.057655"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "parser(_:didStartElement:namespaceURI:qualifiedName:attributes:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -218,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BartNap/BARTClient.swift"
-            timestampString = "436494890.37374"
+            timestampString = "436513866.057655"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "parser(_:didStartElement:namespaceURI:qualifiedName:attributes:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -234,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BartNap/BARTClient.swift"
-            timestampString = "436494891.761248"
+            timestampString = "436513866.057655"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "parser(_:didStartElement:namespaceURI:qualifiedName:attributes:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -250,43 +186,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BartNap/BARTClient.swift"
-            timestampString = "436494901.713706"
+            timestampString = "436513866.057655"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
-            landmarkName = "parser(_:didEndElement:namespaceURI:qualifiedName:)"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "parser(_:didStartElement:namespaceURI:qualifiedName:attributes:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BartNap.BARTClient.parser (BartNap.BARTClient)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSXMLParser&gt;, didEndElement : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, namespaceURI : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, qualifiedName : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "BartNap"
-                  urlString = "file:///Users/iyepes/Documents/XCode/XCode6/CodePath/Project/BARTNap/BartNap/BARTClient.swift"
-                  timestampString = "436496140.025774"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "167"
-                  endingLineNumber = "167"
-                  offsetFromSymbolStart = "7177">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BartNap.BARTClient.parser (BartNap.BARTClient)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSXMLParser&gt;, didEndElement : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, namespaceURI : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, qualifiedName : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "BartNap"
-                  urlString = "file:///Users/iyepes/Documents/XCode/XCode6/CodePath/Project/BARTNap/BartNap/BARTClient.swift"
-                  timestampString = "436496140.025985"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "167"
-                  endingLineNumber = "167"
-                  offsetFromSymbolStart = "7774">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -296,57 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BartNap/BARTClient.swift"
-            timestampString = "436494902.937731"
+            timestampString = "436513866.057655"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "parser(_:didEndElement:namespaceURI:qualifiedName:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BartNap.BARTClient.parser (BartNap.BARTClient)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSXMLParser&gt;, didEndElement : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, namespaceURI : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, qualifiedName : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "BartNap"
-                  urlString = "file:///Users/iyepes/Documents/XCode/XCode6/CodePath/Project/BARTNap/BartNap/BARTClient.swift"
-                  timestampString = "436496140.026962"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "169"
-                  endingLineNumber = "169"
-                  offsetFromSymbolStart = "9162">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BartNap.BARTClient.parser (BartNap.BARTClient)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSXMLParser&gt;, didEndElement : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, namespaceURI : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, qualifiedName : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "BartNap"
-                  urlString = "file:///Users/iyepes/Documents/XCode/XCode6/CodePath/Project/BARTNap/BartNap/BARTClient.swift"
-                  timestampString = "436496140.027193"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "169"
-                  endingLineNumber = "169"
-                  offsetFromSymbolStart = "9883">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BartNap/BARTClient.swift"
-            timestampString = "436494907.036395"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "parser(_:didEndElement:namespaceURI:qualifiedName:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -358,12 +218,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BartNap/BARTClient.swift"
-            timestampString = "436495212.962196"
+            timestampString = "436513866.057655"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "143"
             endingLineNumber = "143"
             landmarkName = "parser(_:didStartElement:namespaceURI:qualifiedName:attributes:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BartNap/BARTClient.swift"
+            timestampString = "436513866.057655"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "parser(_:didStartElement:namespaceURI:qualifiedName:attributes:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BartNap/BARTClient.swift"
+            timestampString = "436513866.057655"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "parser(_:didStartElement:namespaceURI:qualifiedName:attributes:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BartNap/BARTClient.swift"
+            timestampString = "436513866.057655"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "parser(_:didStartElement:namespaceURI:qualifiedName:attributes:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BartNap/BARTClient.swift"
+            timestampString = "436513866.057655"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "parser(_:didEndElement:namespaceURI:qualifiedName:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

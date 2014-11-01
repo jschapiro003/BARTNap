@@ -17,7 +17,6 @@ class BARTClient: NSObject, NSXMLParserDelegate {
     
     var parser:NSXMLParser?
     var parseSuccess:Bool = true
-    //var stations = Array<Station>()
     var stations = Array<Station>()
     
     //station variables to check an XML Elements value
@@ -38,16 +37,17 @@ class BARTClient: NSObject, NSXMLParserDelegate {
     var origin: String?
     var dest: String?
     var legFound:Bool?=false
+    var legDestination: String?
+    var legTrainHeadStation: String?
+    var legTransfercode: String?
     var tripData:ScheduleInformation?
+    var legs = Array<ScheduleInformation>()
     
     //temporary variables to hold the current value of a station property
     var currentStationName:String?
     var currentAbbreviationName:String?
     var currentLatitudeName:String?
     var currentLongitudeName:String?
-
-    //temporary variables to hold the current value of trips properties
-    var currentLeg:String?
     
     class var sharedInstance: BARTClient {
         struct Static{
@@ -68,23 +68,21 @@ class BARTClient: NSObject, NSXMLParserDelegate {
             xmlParser.parse()
         }
         
-        
         return stations
         
     }
     
-    //Gets schedule according origin and destination stations abbr given
-    func getScheduleInfo(origin: String!, dest: String!)->ScheduleInformation{
+    //Gets legs of schedule according origin and destination stations abbr given
+    func getScheduleInfo( origin: String!, dest: String!)->Array<ScheduleInformation>{
         
         self.origin = origin
         self.dest = dest
-        //takes only one route before, it assumes that passenger is already on train, so the actual train is the last one
+        //takes only one route before (b=1&a=0), it assumes that passenger is already on train, so the actual train is the last one
+        /* Information about API response
+        bikeflag: 1 = bikes allowed. 0 = no bikes allowed. transfercode: blank = no transfer, N = normal transfer, T = timed transfer, connecting trains will wait up to five minutes for transferring passengers. S = scheduled transfer, connecting trains will not wait for transferring passengers if there is a delay.*/
         var url: String = "http://api.bart.gov/api/sched.aspx?cmd=depart&orig="+origin+"&dest="+dest+"&date=now&key="+APIKey+"&b=1&a=0"
         
         parser = NSXMLParser(contentsOfURL: NSURL(string: url))!
-        
-        /* Information about API response
-        bikeflag: 1 = bikes allowed. 0 = no bikes allowed. transfercode: blank = no transfer, N = normal transfer, T = timed transfer, connecting trains will wait up to five minutes for transferring passengers. S = scheduled transfer, connecting trains will not wait for transferring passengers if there is a delay.*/
         
         println(parser)
         if let xmlParser = parser?{
@@ -92,7 +90,7 @@ class BARTClient: NSObject, NSXMLParserDelegate {
             xmlParser.parse()
         }
         
-        return self.tripData!
+        return legs
     }
     
     
@@ -139,7 +137,13 @@ class BARTClient: NSObject, NSXMLParserDelegate {
             }
             passData=true
             //check to see if trip exists
-            self.legFound = (elementName == "leg")
+            if(elementName=="leg" && parsingSchedules){
+                legFound=true
+                legDestination = attributeDict["destination"] as String?
+                legTrainHeadStation = attributeDict["trainHeadStation"] as String?
+                legTransfercode = attributeDict["transfercode"] as String?
+                println("Leg destination \(legDestination)"+" trainhead \(legTrainHeadStation)"+" transfercode \(legTransfercode)")
+            }
         }
     }
 
@@ -166,14 +170,12 @@ func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceU
     //ended for parsing Schedules
     if(elementName=="schedule" || elementName=="trip"  || elementName=="leg")
     {
-        if(elementName=="trip" && parsingSchedules){
+        if(elementName=="leg" && parsingSchedules){
             passObject=false
-            //create new trip and populate it
-            println("Trip to be saved \(currentLeg)")
-            var schedule:ScheduleInformation = ScheduleInformation(origin: self.origin, destination: self.dest, leg: currentLeg)
-            // add that station to the stations array
-            //stations.append(station)
-            self.tripData = schedule
+            //create new leg and populate it
+            var leg:ScheduleInformation = ScheduleInformation(legTrainHeadStation: legTrainHeadStation, legDestination: legDestination, legTransfercode: legTransfercode)
+            // add that leg to the legs array
+            legs.append(leg)
         }
         passData=false
         //Parsing stations ended
@@ -186,8 +188,6 @@ func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceU
 
 
     func parser(parser: NSXMLParser, foundCharacters string: String) {
-        
-
         
         if(passObject){
             
@@ -221,16 +221,6 @@ func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceU
                     if (longitudeFound){
                         //println("longitude: \(string)")
                         currentLongitudeName = string
-                    }
-                }
-            }
-            
-            if (parsingSchedules) {
-                //grab each trip
-                if let tripIsFound = self.legFound?{
-                    if(tripIsFound){
-                        println("Trip data:\(string)")
-                        currentLeg = string
                     }
                 }
             }

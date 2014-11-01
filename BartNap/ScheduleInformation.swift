@@ -13,22 +13,15 @@ class ScheduleInformation: NSObject {
     
     //Get legs of trip form origin to destination
     
-    
-    var origin:String?
-    var destination:String?
-    var leg:String?
-    var trip:String?
+    var legTrainHeadStation:String?
+    var legDestination:String?
+    var legTransfercode:String?
 
-    init(origin: String?, destination: String?, leg: String?){
-        
-        self.origin = origin
-        self.destination = destination
-        self.leg = leg
-        
-    }
-    
-    func newSchedule(legFound:Bool?, elementName: String){
-        
+    init(legTrainHeadStation: String?, legDestination: String?, legTransfercode: String?){
+
+        self.legTrainHeadStation = legTrainHeadStation
+        self.legDestination = legDestination
+        self.legTransfercode = legTransfercode
     }
    
 }

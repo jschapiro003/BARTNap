@@ -22,7 +22,8 @@ class HomeViewController: UIViewController {
     
     var stationsArray = Array<Station>()
     
-    var tripData:ScheduleInformation?
+    //Variable to get legs of the trip
+    var legsArray = Array<ScheduleInformation>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +32,8 @@ class HomeViewController: UIViewController {
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
             
-            self.stationsArray = BARTClient.sharedInstance.getStations()
-            self.tripData = BARTClient.sharedInstance.getScheduleInfo("DBRK",dest:"ROCK")
+            //self.stationsArray = BARTClient.sharedInstance.getStations()
+            self.legsArray = BARTClient.sharedInstance.getScheduleInfo("DBRK",dest:"ROCK")
             
             
            
