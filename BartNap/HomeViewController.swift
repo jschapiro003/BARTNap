@@ -28,16 +28,12 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
             
-            //self.stationsArray = BARTClient.sharedInstance.getStations()
+            self.stationsArray = BARTClient.sharedInstance.getStations()
+            //Test schedules parsing
             self.legsArray = BARTClient.sharedInstance.getScheduleInfo("DBRK",dest:"ROCK")
-            
-            
-           
-            
             
         });
         // Do any additional setup after loading the view.
