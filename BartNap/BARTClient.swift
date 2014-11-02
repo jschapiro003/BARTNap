@@ -40,6 +40,8 @@ class BARTClient: NSObject, NSXMLParserDelegate {
     var legDestination: String?
     var legTrainHeadStation: String?
     var legTransfercode: String?
+    var legDestTimeMin:String?
+    var legDestTimeDate:String?
     var tripData:ScheduleInformation?
     var legs = Array<ScheduleInformation>()
     
@@ -147,6 +149,8 @@ class BARTClient: NSObject, NSXMLParserDelegate {
                 legDestination = attributeDict["destination"] as String?
                 legTrainHeadStation = attributeDict["trainHeadStation"] as String?
                 legTransfercode = attributeDict["transfercode"] as String?
+                legDestTimeMin = attributeDict["destTimeMin"] as String?
+                legDestTimeDate = attributeDict["destTimeDate"] as String?
                 println("Leg destination \(legDestination)"+" trainhead \(legTrainHeadStation)"+" transfercode \(legTransfercode)")
             }
         }
@@ -178,7 +182,7 @@ func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceU
         if(elementName=="leg" && parsingSchedules){
             passObject=false
             //create new leg and populate it
-            var leg:ScheduleInformation = ScheduleInformation(legTrainHeadStation: legTrainHeadStation, legDestination: legDestination, legTransfercode: legTransfercode)
+            var leg:ScheduleInformation = ScheduleInformation(legTrainHeadStation: legTrainHeadStation, legDestination: legDestination, legTransfercode: legTransfercode, legDestTimeMin: legDestTimeMin, legDestTimeDate: legDestTimeDate)
             // add that leg to the legs array
             legs.append(leg)
         }

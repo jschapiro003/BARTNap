@@ -64,17 +64,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cr1-s4-JOW">
-                                <rect key="frame" x="91" y="482" width="139" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <state key="normal" title="Start">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="zjh-yr-TWW" kind="push" identifier="openNapCounter" id="Mjf-xk-WWf"/>
-                                </connections>
-                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ht3-gC-u8m">
                                 <rect key="frame" x="43" y="520" width="234" height="29"/>
                                 <segments>
@@ -89,24 +78,27 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minutes Prior to Destination:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYo-eG-7ui">
-                                <rect key="frame" x="48" y="415" width="225" height="21"/>
+                                <rect key="frame" x="43" y="75" width="225" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B0b-Qj-Kha">
-                                <rect key="frame" x="112" y="444" width="97" height="30"/>
+                                <rect key="frame" x="43" y="104" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="minutestyped:" destination="7Ua-8T-FQ8" eventType="editingDidEnd" id="eP3-uu-fhG"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iI-bz-NBs">
-                                <rect key="frame" x="26" y="145" width="108" height="21"/>
+                                <rect key="frame" x="21" y="216" width="108" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView opaque="NO" tag="101" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="88W-en-MOB">
-                                <rect key="frame" x="107" y="75" width="197" height="162"/>
+                                <rect key="frame" x="102" y="146" width="197" height="162"/>
                                 <color key="backgroundColor" red="0.050980396568775177" green="0.70588237047195435" blue="0.90196084976196289" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -114,7 +106,7 @@
                                 </connections>
                             </pickerView>
                             <pickerView opaque="NO" tag="102" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pmE-hX-S1i">
-                                <rect key="frame" x="107" y="245" width="197" height="162"/>
+                                <rect key="frame" x="102" y="316" width="197" height="162"/>
                                 <color key="backgroundColor" red="0.050980396568775177" green="0.70588237047195435" blue="0.90196084976196289" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -122,17 +114,29 @@
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQ7-UB-gNC">
-                                <rect key="frame" x="26" y="315" width="108" height="21"/>
+                                <rect key="frame" x="21" y="386" width="108" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cr1-s4-JOW">
+                                <rect key="frame" x="138" y="104" width="139" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="zjh-yr-TWW" kind="push" identifier="openNapCounter" id="Mjf-xk-WWf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.029743789649381985" green="0.087106139174170455" blue="0.43270210597826086" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Take a new Nap" id="5gz-91-aTV"/>
                     <connections>
                         <outlet property="fromPickerView" destination="88W-en-MOB" id="Zfm-Zp-yIR"/>
+                        <outlet property="minutesTextField" destination="B0b-Qj-Kha" id="2En-Tn-XpC"/>
                         <outlet property="toPickerView" destination="pmE-hX-S1i" id="dKm-S1-H0v"/>
                     </connections>
                 </viewController>

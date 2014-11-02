@@ -11,6 +11,8 @@ import UIKit
 var stationsArray = Array<Station>()
 var originSelected:String?
 var destSelected:String?
+var minSelected:String?
+
 
 class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDelegate{
 
@@ -20,6 +22,12 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
     @IBOutlet weak var fromPickerView: UIPickerView!
    
     @IBOutlet weak var toPickerView: UIPickerView!
+    
+    @IBOutlet weak var minutesTextField: UITextField!
+    
+    @IBAction func minutestyped(sender: AnyObject) {
+        //Create validation of time
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,9 +91,19 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
 
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
                 
+                
+                //Give default values if user don't touch picker view
+                if originSelected == nil {
+                    originSelected = stationsArray[0].abbreviation
+                }
+                if destSelected == nil {
+                    destSelected = stationsArray[0].abbreviation
+                }
+            
                 //schedules parsing
                 self.legsArray = BARTClient.sharedInstance.getScheduleInfo(originSelected!, dest: destSelected!)
-                
+                //This is the time selected
+                println("minutes previous \(self.minutesTextField.text)")
             });
             
         }
