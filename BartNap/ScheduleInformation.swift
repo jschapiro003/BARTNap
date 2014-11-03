@@ -59,7 +59,7 @@ class ScheduleInformation: NSObject {
         let destDate:NSDate = completeFormatter.dateFromString(legDestTimeDate!+" "+legDestTimeMin!)!
 
         var maxTripTime = destDate.timeIntervalSinceDate(nowDate)
-        self.legMaxTrip = Int(maxTripTime / 60.0)
+        self.legMaxTrip = Int(maxTripTime)
         
         println("interval \(legMaxTrip)")
     }

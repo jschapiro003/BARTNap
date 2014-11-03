@@ -127,7 +127,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="zjh-yr-TWW" kind="push" identifier="openNapCounter" id="Mjf-xk-WWf"/>
+                                    <action selector="startPressed:" destination="7Ua-8T-FQ8" eventType="touchUpInside" id="8kN-yh-hjr"/>
+                                    <segue destination="zjh-yr-TWW" kind="push" identifier="openNapCounter" id="zjz-rg-i0H"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -147,7 +148,7 @@
         <!--Remaining Nap Time-->
         <scene sceneID="0f8-Ay-7RZ">
             <objects>
-                <viewController id="zjh-yr-TWW" sceneMemberID="viewController">
+                <viewController id="zjh-yr-TWW" customClass="RemainingNapTimeViewController" customModule="BartNap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dcG-vh-tZ8"/>
                         <viewControllerLayoutGuide type="bottom" id="VYt-j7-LqC"/>
@@ -157,33 +158,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4 min : 35 sec" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmo-FT-Wvc">
-                                <rect key="frame" x="-84" y="162" width="488" height="88"/>
+                                <rect key="frame" x="-84" y="180" width="488" height="88"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMa-IH-Zcx">
-                                <rect key="frame" x="34" y="382" width="252" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Favorite">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqQ-kQ-W1W">
-                                <rect key="frame" x="34" y="298" width="252" height="30"/>
+                                <rect key="frame" x="34" y="297" width="252" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Destination" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idY-sp-lz3">
+                                <rect key="frame" x="117" y="114" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Station Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uc-NQ-6lx">
+                                <rect key="frame" x="47" y="149" width="225" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMa-IH-Zcx">
+                                <rect key="frame" x="34" y="376" width="252" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Favorite">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.025761314820946922" green="0.075443267335964626" blue="0.37476647418478259" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.026293965360000001" green="0.077003160419999994" blue="0.38251528530000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Remaining Nap Time" id="Cpa-Da-InS"/>
+                    <connections>
+                        <outlet property="destinationStationLabel" destination="0Uc-NQ-6lx" id="Czz-ig-6LY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MbV-2X-Bvt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1070" y="41"/>
+            <point key="canvasLocation" x="1063" y="72"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ICo-WG-fwW">

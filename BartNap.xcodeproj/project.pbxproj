@@ -18,6 +18,7 @@
 		3187901019EA296500455502 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3187900E19EA296500455502 /* LaunchScreen.xib */; };
 		3187901C19EA296500455502 /* BartNapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187901B19EA296500455502 /* BartNapTests.swift */; };
 		31898B491A02FF46009BC1DA /* TakeANapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31898B481A02FF46009BC1DA /* TakeANapViewController.swift */; };
+		F85312F51A06C00A000BB841 /* RemainingNapTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85312F41A06C00A000BB841 /* RemainingNapTimeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		3187901A19EA296500455502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3187901B19EA296500455502 /* BartNapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BartNapTests.swift; sourceTree = "<group>"; };
 		31898B481A02FF46009BC1DA /* TakeANapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeANapViewController.swift; sourceTree = "<group>"; };
+		F85312F41A06C00A000BB841 /* RemainingNapTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemainingNapTimeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			children = (
 				315DE3151A01A64300BC4EB7 /* HomeViewController.swift */,
 				31898B481A02FF46009BC1DA /* TakeANapViewController.swift */,
+				F85312F41A06C00A000BB841 /* RemainingNapTimeViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				3168E11719FD7FED0069C520 /* ScheduleInformation.swift in Sources */,
 				31898B491A02FF46009BC1DA /* TakeANapViewController.swift in Sources */,
 				3168E11219FD7C8D0069C520 /* Station.swift in Sources */,
+				F85312F51A06C00A000BB841 /* RemainingNapTimeViewController.swift in Sources */,
 				3187900619EA296500455502 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

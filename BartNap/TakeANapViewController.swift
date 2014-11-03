@@ -13,12 +13,21 @@ var originSelected:String?
 var destSelected:String?
 var minSelected:String?
 
+protocol SendNapParams{
+    
+    func passNapData(origin: String, destination: String, napTime: Int, stopStation: String, stopStationName: String, transfer: Bool)
+    
+}
+
 
 class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDelegate{
 
     //Variable to get legs of the trip
     var legsArray = Array<ScheduleInformation>()
+    //Instantiate next View Controller
+    var RemainingNapTimeVC: RemainingNapTimeViewController? = nil
     
+    //View Outlets
     @IBOutlet weak var fromPickerView: UIPickerView!
    
     @IBOutlet weak var toPickerView: UIPickerView!
@@ -26,13 +35,14 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
     @IBOutlet weak var minutesTextField: UITextField!
     
     @IBAction func minutestyped(sender: AnyObject) {
-        //Create validation of time
+        //Pending creation of validation of time
     }
     
+    @IBAction func startPressed(sender: AnyObject) {
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-              
-        
         // Do any additional setup after loading the view.
     }
 
@@ -88,24 +98,37 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
     //Get legs according selected stations
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "openNapCounter" {
+            //Assing next view controller in segue
+            self.RemainingNapTimeVC = segue.destinationViewController as? RemainingNapTimeViewController
 
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
-                
-                
-                //Give default values if user don't touch picker view
-                if originSelected == nil {
-                    originSelected = stationsArray[0].abbreviation
-                }
-                if destSelected == nil {
-                    destSelected = stationsArray[0].abbreviation
-                }
+            //Give default values if user don't touch picker view
+            if originSelected == nil {
+                originSelected = stationsArray[0].abbreviation
+            }
+            if destSelected == nil {
+                destSelected = stationsArray[0].abbreviation
+            }
             
-                //schedules parsing
-                self.legsArray = BARTClient.sharedInstance.getScheduleInfo(originSelected!, dest: destSelected!)
-                //This is the time selected
-                println("minutes previous \(self.minutesTextField.text)")
-            });
+            //schedules parsing
+            self.legsArray = BARTClient.sharedInstance.getScheduleInfo(originSelected!, dest: destSelected!)
+
+            //This is the time selected
+            println("minutes previous \(self.minutesTextField.text)")
+            var calculatedNapTime = self.legsArray[0].legMaxTrip! - self.minutesTextField.text.toInt()!
+            println("Nap time \(calculatedNapTime)")
+            //set alert if there is a transfer before destination selected
+            var thereIsTransfer:Bool = true
+            if self.legsArray[0].legTransfercode == "" {thereIsTransfer=false}
+            //Get station destination full name
+            var destinationName:String = ""
+            for station in stationsArray{
+                if self.legsArray[0].legDestination == station.abbreviation?{
+                    destinationName = station.name!
+                }
+            }
             
+            self.RemainingNapTimeVC?.passNapData(originSelected!, destination: destSelected!, napTime: calculatedNapTime, stopStation: self.legsArray[0].legDestination!, stopStationName: destinationName, transfer: thereIsTransfer)
+
         }
     }
 }
