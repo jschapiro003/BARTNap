@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcq-8C-ZR6">
-                                <rect key="frame" x="40" y="265" width="225" height="37"/>
+                                <rect key="frame" x="41" y="339" width="225" height="37"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Start a New Trip">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -27,7 +27,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRK-JW-dAc">
-                                <rect key="frame" x="48" y="381" width="225" height="37"/>
+                                <rect key="frame" x="48" y="404" width="225" height="37"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="View Timetables">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,13 +36,12 @@
                                     <segue destination="FGi-c9-aMY" kind="push" identifier="openTimetables" id="fMv-Te-Ljf"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bart Nap" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYk-ej-Oq4">
-                                <rect key="frame" x="19" y="125" width="267" height="45"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <color key="textColor" red="0.077063411979999996" green="0.2112490997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bartnaplogo-v1-02" translatesAutoresizingMaskIntoConstraints="NO" id="pvq-vf-ouA">
+                                <rect key="frame" x="16" y="25" width="288" height="258"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bartnaplogo-v1-04" translatesAutoresizingMaskIntoConstraints="NO" id="xdY-DB-5Xc">
+                                <rect key="frame" x="96" y="182" width="128" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.025899995902795084" green="0.12571054727484623" blue="0.43132218070652173" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -194,6 +193,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Remaining Nap Time" id="Cpa-Da-InS"/>
                     <connections>
+                        <outlet property="counterLabel" destination="Dmo-FT-Wvc" id="sXn-na-hn9"/>
                         <outlet property="destinationStationLabel" destination="0Uc-NQ-6lx" id="Czz-ig-6LY"/>
                     </connections>
                 </viewController>
@@ -338,6 +338,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Bartnaplogo-v1-02" width="400" height="400"/>
+        <image name="Bartnaplogo-v1-04" width="400" height="400"/>
         <image name="train-25.png" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -15,6 +15,7 @@ class RemainingNapTimeViewController: UIViewController, SendNapParams {
 
     @IBOutlet weak var destinationStationLabel: UILabel!
 
+    @IBOutlet weak var counterLabel: UILabel!
     
     var orig:String?
     var dest:String?
