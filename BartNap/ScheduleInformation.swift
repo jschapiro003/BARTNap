@@ -36,7 +36,7 @@ class ScheduleInformation: NSObject {
     init(legTrainHeadStation: String?, legDestination: String?, legTransfercode: String?, legDestTimeMin: String?, legDestTimeDate: String?){
         
         //Default values trip can't be shorter than 2 minutes
-        self.legMaxTrip = 2
+        self.legMaxTrip = 120
         
         self.legTrainHeadStation = legTrainHeadStation
         self.legDestination = legDestination

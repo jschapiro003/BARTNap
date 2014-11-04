@@ -151,7 +151,7 @@ class BARTClient: NSObject, NSXMLParserDelegate {
                 legTransfercode = attributeDict["transfercode"] as String?
                 legDestTimeMin = attributeDict["destTimeMin"] as String?
                 legDestTimeDate = attributeDict["destTimeDate"] as String?
-                println("Leg destination \(legDestination)"+" trainhead \(legTrainHeadStation)"+" transfercode \(legTransfercode)")
+                println("Leg destination \(legDestination)"+" trainhead \(legTrainHeadStation)"+" transfercode \(legTransfercode) destTime \(legDestTimeMin)")
             }
         }
     }

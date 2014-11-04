@@ -56,10 +56,10 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
     
         for station in stationsArray{
             if let sn = station.name?{
-                println("station name:\(sn)")
+                //println("station name:\(sn)")
             }
         if let sa = station.abbreviation?{
-                println("station abbreviation \(sa)")
+                //println("station abbreviation \(sa)")
             }
         
         }
@@ -114,7 +114,7 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
 
             //This is the time selected
             println("minutes previous \(self.minutesTextField.text)")
-            var calculatedNapTime = self.legsArray[0].legMaxTrip! - self.minutesTextField.text.toInt()!
+            var calculatedNapTime = self.legsArray[0].legMaxTrip! - 60*self.minutesTextField.text.toInt()!
             println("Nap time \(calculatedNapTime)")
             //set alert if there is a transfer before destination selected
             var thereIsTransfer:Bool = true

@@ -20,6 +20,7 @@
 		31898B491A02FF46009BC1DA /* TakeANapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31898B481A02FF46009BC1DA /* TakeANapViewController.swift */; };
 		BEE5241A7F3976F47E87AD9F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ED5F96E54B12B72F1BC1BE /* libPods.a */; };
 		F85312F51A06C00A000BB841 /* RemainingNapTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85312F41A06C00A000BB841 /* RemainingNapTimeViewController.swift */; };
+		F8BB8C1B1A084D8700C483E7 /* allDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BB8C1A1A084D8700C483E7 /* allDoneViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		F6166F54374392ABB28F0D4B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F85312F41A06C00A000BB841 /* RemainingNapTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemainingNapTimeViewController.swift; sourceTree = "<group>"; };
 		F8BB8C151A08399100C483E7 /* BartNap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BartNap-Bridging-Header.h"; sourceTree = "<group>"; };
+		F8BB8C1A1A084D8700C483E7 /* allDoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = allDoneViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				315DE3151A01A64300BC4EB7 /* HomeViewController.swift */,
 				31898B481A02FF46009BC1DA /* TakeANapViewController.swift */,
 				F85312F41A06C00A000BB841 /* RemainingNapTimeViewController.swift */,
+				F8BB8C1A1A084D8700C483E7 /* allDoneViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				31726B3B19F2F5B900FDAFE9 /* BARTClient.swift in Sources */,
 				315DE3161A01A64300BC4EB7 /* HomeViewController.swift in Sources */,
 				3168E11719FD7FED0069C520 /* ScheduleInformation.swift in Sources */,
+				F8BB8C1B1A084D8700C483E7 /* allDoneViewController.swift in Sources */,
 				31898B491A02FF46009BC1DA /* TakeANapViewController.swift in Sources */,
 				3168E11219FD7C8D0069C520 /* Station.swift in Sources */,
 				F85312F51A06C00A000BB841 /* RemainingNapTimeViewController.swift in Sources */,

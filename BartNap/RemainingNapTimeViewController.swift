@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class RemainingNapTimeViewController: UIViewController, SendNapParams {
+class RemainingNapTimeViewController: UIViewController, SendNapParams, MZTimerLabelDelegate {
 
 
     @IBOutlet weak var destinationStationLabel: UILabel!
@@ -24,10 +24,23 @@ class RemainingNapTimeViewController: UIViewController, SendNapParams {
     var minutes:Int?
     var transferAlert:Bool?
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.destinationStationLabel.text = self.stopStationLongName
         
+        var mycountdownTimer = MZTimerLabel(label: counterLabel, andTimerType: MZTimerLabelTypeTimer)
+        
+        mycountdownTimer.timeLabel.textColor = UIColor.blueColor()
+        mycountdownTimer.setCountDownTime(Double(minutes!))
+        mycountdownTimer.delegate = self
+        mycountdownTimer.start()
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.destinationStationLabel.text = self.stopStationLongName
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,7 +48,16 @@ class RemainingNapTimeViewController: UIViewController, SendNapParams {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+    func timerLabel(timerLabel: AnyObject!, finshedCountDownTimerWithTime countTime: NSTimeInterval){
+        
+        /*load "all done" VC
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("allDoneViewController") as UIViewController
+        self.presentViewController(vc, animated: true, completion: nil)*/
+        performSegueWithIdentifier("openAllDone", sender: self)
+        
+    }
     
     func passNapData(origin: String, destination: String, napTime: Int, stopStation: String, stopStationName: String, transfer: Bool) {
         self.orig = origin

@@ -168,6 +168,9 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="CLY-q3-MuD" kind="custom" identifier="openAllDone" id="pCX-Gl-UKg"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Destination" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idY-sp-lz3">
                                 <rect key="frame" x="117" y="114" width="87" height="21"/>
@@ -182,7 +185,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMa-IH-Zcx">
-                                <rect key="frame" x="34" y="376" width="252" height="30"/>
+                                <rect key="frame" x="34" y="375" width="252" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Favorite">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -256,10 +259,10 @@
             </objects>
             <point key="canvasLocation" x="670" y="-613"/>
         </scene>
-        <!--View Controller-->
+        <!--All Done View Controller-->
         <scene sceneID="qT7-Vh-toR">
             <objects>
-                <viewController id="CLY-q3-MuD" sceneMemberID="viewController">
+                <viewController id="CLY-q3-MuD" customClass="allDoneViewController" customModule="BartNap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dPc-x7-PjX"/>
                         <viewControllerLayoutGuide type="bottom" id="kYM-pV-lDm"/>
@@ -269,25 +272,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How Was Your Nap?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jwk-w8-pks">
-                                <rect key="frame" x="28" y="28" width="264" height="144"/>
+                                <rect key="frame" x="34" y="74" width="264" height="144"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1t-fi-VKh">
-                                <rect key="frame" x="61" y="256" width="198" height="36"/>
+                                <rect key="frame" x="61" y="255" width="198" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Return">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="7Ua-8T-FQ8" kind="custom" id="88B-1y-o9s"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.02352272325377236" green="0.068887442711630539" blue="0.34220023777173914" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Ees-yU-1VL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WsC-W2-rZQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1424" y="41"/>
+            <point key="canvasLocation" x="1479" y="72"/>
         </scene>
         <!--BART Timetables-->
         <scene sceneID="yEt-8J-SQb">
@@ -347,4 +354,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="88B-1y-o9s"/>
+    </inferredMetricsTieBreakers>
 </document>
