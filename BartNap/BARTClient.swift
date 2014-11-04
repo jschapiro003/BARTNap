@@ -61,7 +61,6 @@ class BARTClient: NSObject, NSXMLParserDelegate {
     
     
     func getStations()->Array<Station>{
-        
        
         parser = NSXMLParser(contentsOfURL: NSURL(string:"http://api.bart.gov/api/stn.aspx?cmd=stns&key="+APIKey ))!
         println(parser)
@@ -81,6 +80,9 @@ class BARTClient: NSObject, NSXMLParserDelegate {
     var legTransfercode:String?
     */
     func getScheduleInfo( origin: String!, dest: String!)->Array<ScheduleInformation>{
+        
+        //Empty legs
+        legs = Array<ScheduleInformation>()
         
         self.origin = origin
         self.dest = dest
