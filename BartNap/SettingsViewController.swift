@@ -13,7 +13,9 @@ class SettingsViewController: UIViewController,UIPickerViewDelegate {
     var stationsArray = Array<Station>()
     var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
     var originSelected:String?
+    var rowOriginSelected:Int = 0
     var destSelected:String?
+    var rowDestSelected:Int = 0
     
     @IBOutlet weak var toFavoritesPickerView: UIPickerView!
     
@@ -26,7 +28,25 @@ class SettingsViewController: UIViewController,UIPickerViewDelegate {
         toFavoritesPickerView.delegate = self
         fromFavoritesPickerView.delegate = self
        
-        // Do any additional setup after loading the view.
+        // Load favorite trip
+        if let tripOrigin = defaults.objectForKey("originSelected") as? String{
+            println("saved origin:\(tripOrigin)")
+            if let rowOriginSelected = defaults.objectForKey("rowOriginSelected") as? Int {
+                fromFavoritesPickerView.selectRow(rowOriginSelected, inComponent: 0, animated: false)
+                self.rowOriginSelected = rowOriginSelected
+                self.originSelected = stationsArray[rowOriginSelected].abbreviation
+            }
+        }
+        
+        if let tripDestination = defaults.objectForKey("destinationSelected") as? String{
+            println("saved destination: \(tripDestination)")
+            if let rowDestSelected = defaults.objectForKey("rowDestSelected") as? Int {
+                toFavoritesPickerView.selectRow(rowDestSelected, inComponent: 0, animated: false)
+                self.rowDestSelected = rowDestSelected
+                self.destSelected = stationsArray[rowDestSelected].abbreviation
+            }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,37 +81,45 @@ class SettingsViewController: UIViewController,UIPickerViewDelegate {
         if pickerView == fromFavoritesPickerView {
             //defaults.setObject(itemSelected, forKey: "originSelected")
             self.originSelected = itemSelected
+            self.rowOriginSelected = row
             println("Selected origin \(itemSelected)")
             
         } else if pickerView == toFavoritesPickerView {
             //defaults.setObject(itemSelected, forKey: "destSelected")
             self.destSelected = itemSelected
+            self.rowDestSelected = row
             println("Selected destination \(itemSelected)")
         }
-
-    
     }
     
+    /*func selectRow(row: Int, inComponent component: Int, animated: Bool) {
+    
+    }*/
+    
     @IBAction func saveAsFavorite(sender: AnyObject) {
+        
+        //Give default values if user don't touch picker view
+        if self.originSelected == nil {
+            self.originSelected = stationsArray[0].abbreviation
+            self.rowOriginSelected = 0
+        }
+        if self.destSelected == nil {
+            self.destSelected = stationsArray[0].abbreviation
+            self.rowDestSelected = 0
+        }
+        
         if let originSelected = self.originSelected?{
             println(originSelected)
             defaults.setObject(originSelected, forKey: "originSelected")
+            defaults.setObject(self.rowOriginSelected, forKey: "rowOriginSelected")
         }
         
         if let destinationSelected = self.destSelected?{
             println(destinationSelected)
             defaults.setObject(destinationSelected, forKey: "destinationSelected")
+            defaults.setObject(self.rowDestSelected, forKey: "rowDestSelected")
         }
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

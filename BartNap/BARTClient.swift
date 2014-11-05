@@ -90,7 +90,7 @@ class BARTClient: NSObject, NSXMLParserDelegate {
         /* Information about API response
         bikeflag: 1 = bikes allowed. 0 = no bikes allowed. transfercode: blank = no transfer, N = normal transfer, T = timed transfer, connecting trains will wait up to five minutes for transferring passengers. S = scheduled transfer, connecting trains will not wait for transferring passengers if there is a delay.*/
         var url: String = "http://api.bart.gov/api/sched.aspx?cmd=depart&orig="+origin+"&dest="+dest+"&date=now&key="+APIKey+"&b=1&a=0"
-        
+        println(url)
         parser = NSXMLParser(contentsOfURL: NSURL(string: url))!
         
         println(parser)

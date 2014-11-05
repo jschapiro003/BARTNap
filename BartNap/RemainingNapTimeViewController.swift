@@ -50,11 +50,6 @@ class RemainingNapTimeViewController: UIViewController, SendNapParams, MZTimerLa
     
     
     func timerLabel(timerLabel: AnyObject!, finshedCountDownTimerWithTime countTime: NSTimeInterval){
-        
-        /*load "all done" VC
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("allDoneViewController") as UIViewController
-        self.presentViewController(vc, animated: true, completion: nil)*/
         performSegueWithIdentifier("openAllDone", sender: self)
         
     }

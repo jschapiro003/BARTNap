@@ -26,6 +26,11 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
     var legsArray = Array<ScheduleInformation>()
     //Instantiate next View Controller
     var RemainingNapTimeVC: RemainingNapTimeViewController? = nil
+    //Nap calculations
+    var calculatedNapTimeManual:Int = 300
+    var thereIsTransfer:Bool = true
+    var destinationName:String = ""
+    //Vars for user defaults view
     var settingsViewController:SettingsViewController?
     var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
 
@@ -38,26 +43,86 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
     @IBOutlet weak var minutesTextField: UITextField!
     
     @IBAction func minutestyped(sender: AnyObject) {
-        //Pending creation of validation of time
+        //Validation done in start button
+    }
+    
+    @IBOutlet weak var warningLabel: UILabel!
+    
+    @IBAction func startPressedManual(sender: AnyObject) {
+        
+        //Give default values if user don't touch picker view
+        if originSelected == nil {
+            originSelected = stationsArray[0].abbreviation
+        }
+        if destSelected == nil {
+            destSelected = stationsArray[0].abbreviation
+        }
+        
+        //schedules parsing
+        self.legsArray = BARTClient.sharedInstance.getScheduleInfo(originSelected!, dest: destSelected!)
+        
+        if minutesTextField.text.toInt() < 2 {
+            //Minutes prior station no less than 5.
+            warningLabel.text = "Minimun prior time is 2 minutes"
+        } else {
+            if !self.legsArray.isEmpty {
+                //If there are legs, use first one
+                calculatedNapTimeManual = self.legsArray[0].legMaxTrip! - 60*self.minutesTextField.text.toInt()!
+                //set alert if there is a transfer before destination selected
+                if self.legsArray[0].legTransfercode == "" {
+                    thereIsTransfer=false
+                } else {
+                    thereIsTransfer=true
+                }
+                //Get station destination full name
+                for station in stationsArray{
+                    if self.legsArray[0].legDestination == station.abbreviation?{
+                        destinationName = station.name!
+                    }
+                }
+                if calculatedNapTimeManual > 300 {
+                    println("Go to Nap: \(calculatedNapTimeManual) seconds")
+                    
+                    //Check OK, open counter
+                    performSegueWithIdentifier("openNapCounterManual", sender: self)
+                } else {
+                    var transferAlert:String = ""
+                    if thereIsTransfer {
+                        transferAlert = "your transfer in "
+                    }
+                    warningLabel.text = "Travel to "+transferAlert+"\(destinationName) is shorter than 7 minutes. Not enough for a 5 minutes Nap"
+                }
+            } else {
+                //If there are no legs, warn user.
+                warningLabel.text = "Trip can't be calculated"
+            }
+        }
+        
     }
     
     @IBAction func startPressed(sender: AnyObject) {
         
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // test to load favorited trip
+        warningLabel.text = ""
+        // Load favorite trip
         if let tripOrigin = defaults.objectForKey("originSelected") as? String{
             println("saved origin:\(tripOrigin)")
+            if let rowOriginSelected = defaults.objectForKey("rowOriginSelected") as? Int {
+                fromPickerView.selectRow(rowOriginSelected, inComponent: 0, animated: false)
+            }
         }
         
         if let tripDestination = defaults.objectForKey("destinationSelected") as? String{
             println("saved destination: \(tripDestination)")
+            if let rowDestSelected = defaults.objectForKey("rowDestSelected") as? Int {
+                toPickerView.selectRow(rowDestSelected, inComponent: 0, animated: false)
+            }
         }
         
-        
-        // Do any additional setup after loading the view.
     }
    
 
@@ -104,6 +169,8 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
     //Gets the stations selected in pickerviews
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
+        //Reset previous warnings
+        warningLabel.text = ""
         var itemSelected = stationsArray[row].abbreviation
         if pickerView == fromPickerView {
             originSelected = itemSelected
@@ -116,6 +183,17 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
     
     //Get legs according selected stations
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        //Prepare for counter
+        if segue.identifier == "openNapCounterManual" {
+            //Assing next view controller in segue
+            RemainingNapTimeVC = segue.destinationViewController as? RemainingNapTimeViewController
+            //Pass params to protocol
+            RemainingNapTimeVC?.passNapData(originSelected!, destination: destSelected!, napTime: calculatedNapTimeManual, stopStation: self.legsArray[0].legDestination!, stopStationName: destinationName, transfer: thereIsTransfer)
+            
+        }
+        
+        
         if segue.identifier == "openNapCounter" {
             //Assing next view controller in segue
             self.RemainingNapTimeVC = segue.destinationViewController as? RemainingNapTimeViewController
@@ -149,11 +227,11 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
             println("Nap time \(calculatedNapTime)")
             
             //set alert if there is a transfer before destination selected
-            var thereIsTransfer:Bool = true
+            
             if self.legsArray[0].legTransfercode == "" {thereIsTransfer=false}
             
             //Get station destination full name
-            var destinationName:String = ""
+            
             for station in stationsArray{
                 if self.legsArray[0].legDestination == station.abbreviation?{
                     destinationName = station.name!

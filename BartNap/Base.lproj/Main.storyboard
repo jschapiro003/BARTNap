@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2JQ-Q7-AtI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2JQ-Q7-AtI">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -96,14 +96,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ht3-gC-u8m">
-                                <rect key="frame" x="43" y="520" width="234" height="29"/>
-                                <segments>
-                                    <segment title="List"/>
-                                    <segment title="Favorites"/>
-                                </segments>
-                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIb-jG-wFM">
                                 <rect key="frame" x="486" y="52" width="64" height="42"/>
                                 <state key="normal">
@@ -139,7 +131,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xlR-xa-iJ7">
-                                <rect key="frame" x="16" y="440" width="297" height="44"/>
+                                <rect key="frame" x="12" y="292" width="297" height="44"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5 Min Before Arrival" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B0b-Qj-Kha">
                                         <rect key="frame" x="70" y="9" width="204" height="30"/>
@@ -162,10 +154,10 @@
                                 <rect key="frame" x="98" y="355" width="125" height="90"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cr1-s4-JOW">
-                                <rect key="frame" x="20" y="264" width="288" height="30"/>
+                                <rect key="frame" x="16" y="532" width="288" height="36"/>
                                 <color key="backgroundColor" red="0.050980396570000003" green="0.70588237050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="Start">
+                                <state key="normal" title="Start Old">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -174,6 +166,25 @@
                                     <segue destination="zjh-yr-TWW" kind="push" identifier="openNapCounter" id="zjz-rg-i0H"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxx-2C-aFf">
+                                <rect key="frame" x="16" y="254" width="288" height="30"/>
+                                <color key="backgroundColor" red="0.050980396570000003" green="0.70588237050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startPressed:" destination="7Ua-8T-FQ8" eventType="touchUpInside" id="hDu-sO-gA3"/>
+                                    <action selector="startPressedManual:" destination="7Ua-8T-FQ8" eventType="touchUpInside" id="aur-l3-rnl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WARNING" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgM-Z1-2bA">
+                                <rect key="frame" x="15" y="344" width="287" height="86"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.92454993210000003" green="0.41467134770000003" blue="0.19035674020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90248325890000003" green="0.90248325890000003" blue="0.90248325890000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -188,6 +199,8 @@
                         <outlet property="fromPickerView" destination="88W-en-MOB" id="Zfm-Zp-yIR"/>
                         <outlet property="minutesTextField" destination="B0b-Qj-Kha" id="2En-Tn-XpC"/>
                         <outlet property="toPickerView" destination="pmE-hX-S1i" id="dKm-S1-H0v"/>
+                        <outlet property="warningLabel" destination="IgM-Z1-2bA" id="FeM-Uw-Cvq"/>
+                        <segue destination="zjh-yr-TWW" kind="push" identifier="openNapCounterManual" id="Jbk-NP-L7b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AkH-kD-FTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -214,7 +227,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="CLY-q3-MuD" kind="custom" identifier="openAllDone" id="pCX-Gl-UKg"/>
+                                    <segue destination="CLY-q3-MuD" kind="push" identifier="openAllDone" id="pCX-Gl-UKg"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Destination" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idY-sp-lz3">
@@ -252,7 +265,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock-lgray" translatesAutoresizingMaskIntoConstraints="NO" id="R2H-7e-HPY">
-                                <rect key="frame" x="39" y="215" width="240" height="128"/>
+                                <rect key="frame" x="39" y="215" width="240" height="196"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.90248325890000003" green="0.90248325890000003" blue="0.90248325890000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -342,7 +355,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="7Ua-8T-FQ8" kind="custom" id="88B-1y-o9s"/>
+                                    <segue destination="7Ua-8T-FQ8" kind="push" id="88B-1y-o9s"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bartnaplogo-v1-04" translatesAutoresizingMaskIntoConstraints="NO" id="r4i-uj-pdP">
@@ -389,5 +402,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="JfP-5E-LMA"/>
+        <segue reference="Jbk-NP-L7b"/>
     </inferredMetricsTieBreakers>
 </document>
