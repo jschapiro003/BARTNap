@@ -19,6 +19,7 @@
 		3187901C19EA296500455502 /* BartNapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187901B19EA296500455502 /* BartNapTests.swift */; };
 		31898B491A02FF46009BC1DA /* TakeANapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31898B481A02FF46009BC1DA /* TakeANapViewController.swift */; };
 		31F42D7B1A088C0100444E62 /* TimeTablesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F42D7A1A088C0000444E62 /* TimeTablesViewController.swift */; };
+		31F42D7D1A09DBC500444E62 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F42D7C1A09DBC500444E62 /* SettingsViewController.swift */; };
 		BEE5241A7F3976F47E87AD9F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ED5F96E54B12B72F1BC1BE /* libPods.a */; };
 		F85312F51A06C00A000BB841 /* RemainingNapTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85312F41A06C00A000BB841 /* RemainingNapTimeViewController.swift */; };
 		F8BB8C1B1A084D8700C483E7 /* allDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BB8C1A1A084D8700C483E7 /* allDoneViewController.swift */; };
@@ -52,6 +53,7 @@
 		3187901B19EA296500455502 /* BartNapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BartNapTests.swift; sourceTree = "<group>"; };
 		31898B481A02FF46009BC1DA /* TakeANapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeANapViewController.swift; sourceTree = "<group>"; };
 		31F42D7A1A088C0000444E62 /* TimeTablesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTablesViewController.swift; sourceTree = "<group>"; };
+		31F42D7C1A09DBC500444E62 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		52ED5F96E54B12B72F1BC1BE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6166F54374392ABB28F0D4B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F85312F41A06C00A000BB841 /* RemainingNapTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemainingNapTimeViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				F85312F41A06C00A000BB841 /* RemainingNapTimeViewController.swift */,
 				F8BB8C1A1A084D8700C483E7 /* allDoneViewController.swift */,
 				31F42D7A1A088C0000444E62 /* TimeTablesViewController.swift */,
+				31F42D7C1A09DBC500444E62 /* SettingsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			files = (
 				3168E11519FD7FD60069C520 /* EstimatedTimeDeparture.swift in Sources */,
 				31726B3B19F2F5B900FDAFE9 /* BARTClient.swift in Sources */,
+				31F42D7D1A09DBC500444E62 /* SettingsViewController.swift in Sources */,
 				31F42D7B1A088C0100444E62 /* TimeTablesViewController.swift in Sources */,
 				315DE3161A01A64300BC4EB7 /* HomeViewController.swift in Sources */,
 				3168E11719FD7FED0069C520 /* ScheduleInformation.swift in Sources */,

@@ -84,7 +84,7 @@
             </objects>
             <point key="canvasLocation" x="643" y="774"/>
         </scene>
-        <!--Take a new Nap-->
+        <!--Take A New Nap-->
         <scene sceneID="Dnr-Px-sF4">
             <objects>
                 <viewController id="7Ua-8T-FQ8" customClass="TakeANapViewController" customModule="BartNap" customModuleProvider="target" sceneMemberID="viewController">
@@ -177,7 +177,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.90248325890000003" green="0.90248325890000003" blue="0.90248325890000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Take a new Nap" id="5gz-91-aTV"/>
+                    <navigationItem key="navigationItem" title="Take A New Nap" id="5gz-91-aTV">
+                        <barButtonItem key="rightBarButtonItem" title="Favorites" id="n3J-4h-MaO">
+                            <connections>
+                                <segue destination="bpf-Rd-Cun" kind="push" identifier="showFavorites" id="OGo-Ur-rxB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="fromPickerView" destination="88W-en-MOB" id="Zfm-Zp-yIR"/>
                         <outlet property="minutesTextField" destination="B0b-Qj-Kha" id="2En-Tn-XpC"/>
@@ -212,13 +218,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Destination" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idY-sp-lz3">
-                                <rect key="frame" x="24" y="125" width="234" height="21"/>
+                                <rect key="frame" x="24" y="183" width="234" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Station Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uc-NQ-6lx">
-                                <rect key="frame" x="24" y="148" width="225" height="21"/>
+                                <rect key="frame" x="24" y="206" width="225" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -232,7 +238,7 @@
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kdV-2l-ug0">
-                                <rect key="frame" x="16" y="34" width="288" height="83"/>
+                                <rect key="frame" x="16" y="92" width="288" height="83"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock-dgray" translatesAutoresizingMaskIntoConstraints="NO" id="8dv-Th-mpj">
                                         <rect key="frame" x="8" y="17" width="57" height="49"/>
@@ -261,10 +267,10 @@
             </objects>
             <point key="canvasLocation" x="1063" y="72"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings-->
         <scene sceneID="ICo-WG-fwW">
             <objects>
-                <viewController id="bpf-Rd-Cun" sceneMemberID="viewController">
+                <viewController id="bpf-Rd-Cun" customClass="SettingsViewController" customModule="BartNap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8md-YA-xmH"/>
                         <viewControllerLayoutGuide type="bottom" id="KFS-Yl-Gni"/>
@@ -273,48 +279,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Favorites" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGt-Dm-FVb">
-                                <rect key="frame" x="-84" y="45" width="488" height="88"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="j2g-nM-0tf">
-                                <rect key="frame" x="10" y="141" width="300" height="300"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="favCell" rowHeight="81" id="TCO-Go-k60">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TCO-Go-k60" id="yrL-di-bna">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="xyz - abc" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5L-wm-8MO">
-                                                    <rect key="frame" x="16" y="31" width="116" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5Yd-cQ-mJE">
-                                <rect key="frame" x="43" y="498" width="234" height="29"/>
-                                <segments>
-                                    <segment title="List"/>
-                                    <segment title="Favorites"/>
-                                </segments>
-                            </segmentedControl>
+                            <pickerView opaque="NO" tag="102" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M6V-Jg-58d">
+                                <rect key="frame" x="16" y="116" width="135" height="162"/>
+                                <color key="backgroundColor" red="0.050980396570000003" green="0.70588237050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7Ua-8T-FQ8" id="xKE-j4-npN"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9d-Ob-H5i">
+                                <rect key="frame" x="57" y="487" width="212" height="30"/>
+                                <state key="normal" title="Save as Favorite">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveAsFavorite:" destination="bpf-Rd-Cun" eventType="touchUpInside" id="c9I-Ht-h9Y"/>
+                                </connections>
+                            </button>
+                            <pickerView opaque="NO" tag="101" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n28-NG-UGX">
+                                <rect key="frame" x="169" y="116" width="135" height="162"/>
+                                <color key="backgroundColor" red="0.050980396570000003" green="0.70588237050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7Ua-8T-FQ8" id="A2q-hA-JEb"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
-                        <color key="backgroundColor" red="0.028493155377498931" green="0.083443595691084199" blue="0.41450832201086951" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.90248325890000003" green="0.90248325890000003" blue="0.90248325890000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NpI-yt-o6u"/>
+                    <navigationItem key="navigationItem" title="Settings" id="NpI-yt-o6u"/>
+                    <connections>
+                        <outlet property="fromFavoritesPickerView" destination="M6V-Jg-58d" id="p8s-MN-heJ"/>
+                        <outlet property="toFavoritesPickerView" destination="n28-NG-UGX" id="1IN-Zo-uEA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9QN-Ze-dqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="670" y="-613"/>
+            <point key="canvasLocation" x="1055" y="-647"/>
         </scene>
         <!--All Done View Controller-->
         <scene sceneID="qT7-Vh-toR">

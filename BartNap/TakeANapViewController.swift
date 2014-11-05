@@ -26,6 +26,9 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
     var legsArray = Array<ScheduleInformation>()
     //Instantiate next View Controller
     var RemainingNapTimeVC: RemainingNapTimeViewController? = nil
+    var settingsViewController:SettingsViewController?
+    var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+
     
     //View Outlets
     @IBOutlet weak var fromPickerView: UIPickerView!
@@ -43,8 +46,20 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // test to load favorited trip
+        if let tripOrigin = defaults.objectForKey("originSelected") as? String{
+            println("saved origin:\(tripOrigin)")
+        }
+        
+        if let tripDestination = defaults.objectForKey("destinationSelected") as? String{
+            println("saved destination: \(tripDestination)")
+        }
+        
+        
         // Do any additional setup after loading the view.
     }
+   
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -148,7 +163,16 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
             self.RemainingNapTimeVC?.passNapData(originSelected!, destination: destSelected!, napTime: calculatedNapTime, stopStation: self.legsArray[0].legDestination!, stopStationName: destinationName, transfer: thereIsTransfer)
 
         }
+        
+        if segue.identifier == "showFavorites"{
+            
+            self.settingsViewController = segue.destinationViewController as? SettingsViewController
+            settingsViewController?.stationsArray = stationsArray
+           
+        }
     }
+    
+    
 }
 
 
