@@ -39,7 +39,7 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
     }
     
     @IBAction func startPressed(sender: AnyObject) {
-
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,10 +70,14 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
         return 1
     }
     
+    func pickerView(pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 30.0
+    }
+    
     // returns the # of rows in each component..
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return stationsArray.count
-        //return 12
+      
     }
     
     
@@ -109,16 +113,30 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
                 destSelected = stationsArray[0].abbreviation
             }
             
+            //*******I think this should be done in the background and not on the main thread!!****/////
+            
+            
             //schedules parsing
             self.legsArray = BARTClient.sharedInstance.getScheduleInfo(originSelected!, dest: destSelected!)
+            
+             //************************************************************************************///
+            
 
             //This is the time selected
             println("minutes previous \(self.minutesTextField.text)")
+            
+            
+            //implicitly unwrapped legMaxTrip! could cause crash?
             var calculatedNapTime = self.legsArray[0].legMaxTrip! - 60*self.minutesTextField.text.toInt()!
+           
+            
+            println("Leg Max Trip: \(self.legsArray[0].legMaxTrip!/60)")
             println("Nap time \(calculatedNapTime)")
+            
             //set alert if there is a transfer before destination selected
             var thereIsTransfer:Bool = true
             if self.legsArray[0].legTransfercode == "" {thereIsTransfer=false}
+            
             //Get station destination full name
             var destinationName:String = ""
             for station in stationsArray{

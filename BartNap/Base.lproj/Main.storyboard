@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2JQ-Q7-AtI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2JQ-Q7-AtI">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -17,9 +17,10 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcq-8C-ZR6">
-                                <rect key="frame" x="41" y="339" width="225" height="37"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <rect key="frame" x="41" y="452" width="225" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Start a New Trip">
+                                    <color key="titleColor" red="0.050980396570000003" green="0.70588237050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -27,29 +28,61 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRK-JW-dAc">
-                                <rect key="frame" x="48" y="404" width="225" height="37"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <rect key="frame" x="41" y="497" width="225" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="View Timetables">
+                                    <color key="titleColor" red="0.050980396570000003" green="0.70588237050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="FGi-c9-aMY" kind="push" identifier="openTimetables" id="fMv-Te-Ljf"/>
+                                    <segue destination="o8X-rO-ayz" kind="push" id="Szr-R9-TcT"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bartnaplogo-v1-02" translatesAutoresizingMaskIntoConstraints="NO" id="pvq-vf-ouA">
-                                <rect key="frame" x="16" y="25" width="288" height="258"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bartnaplogo-v1-04" translatesAutoresizingMaskIntoConstraints="NO" id="xdY-DB-5Xc">
-                                <rect key="frame" x="96" y="182" width="128" height="128"/>
+                                <rect key="frame" x="16" y="162" width="288" height="258"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.025899995902795084" green="0.12571054727484623" blue="0.43132218070652173" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.9024832589285714" green="0.9024832589285714" blue="0.9024832589285714" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="r2Q-Yx-nsT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="251" y="351"/>
+        </scene>
+        <!--Time Tables View Controller-->
+        <scene sceneID="3G4-Cc-QsI">
+            <objects>
+                <viewController id="o8X-rO-ayz" customClass="TimeTablesViewController" customModule="BartNap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0tU-AN-dJd"/>
+                        <viewControllerLayoutGuide type="bottom" id="p7E-Jo-hee"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KA8-6g-fCc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l5c-ly-z6g">
+                                <rect key="frame" x="0.0" y="-5" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="x6j-BO-Yw0"/>
+                                </items>
+                            </navigationBar>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cj1-8E-lUs">
+                                <rect key="frame" x="0.0" y="64" width="327" height="529"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gxe-5d-xOg"/>
+                    <connections>
+                        <outlet property="timeTableWebView" destination="cj1-8E-lUs" id="lGF-Sb-YWk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hmt-bN-LNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="643" y="774"/>
         </scene>
         <!--Take a new Nap-->
         <scene sceneID="Dnr-Px-sF4">
@@ -69,35 +102,22 @@
                                     <segment title="List"/>
                                     <segment title="Favorites"/>
                                 </segments>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIb-jG-wFM">
                                 <rect key="frame" x="486" y="52" width="64" height="42"/>
-                                <state key="normal" backgroundImage="train-25.png">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minutes Prior to Destination:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYo-eG-7ui">
-                                <rect key="frame" x="43" y="75" width="225" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B0b-Qj-Kha">
-                                <rect key="frame" x="43" y="104" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="minutestyped:" destination="7Ua-8T-FQ8" eventType="editingDidEnd" id="eP3-uu-fhG"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iI-bz-NBs">
-                                <rect key="frame" x="21" y="216" width="108" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iI-bz-NBs">
+                                <rect key="frame" x="218" y="55" width="108" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView opaque="NO" tag="101" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="88W-en-MOB">
-                                <rect key="frame" x="102" y="146" width="197" height="162"/>
+                                <rect key="frame" x="12" y="84" width="135" height="162"/>
                                 <color key="backgroundColor" red="0.050980396568775177" green="0.70588237047195435" blue="0.90196084976196289" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -105,22 +125,23 @@
                                 </connections>
                             </pickerView>
                             <pickerView opaque="NO" tag="102" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pmE-hX-S1i">
-                                <rect key="frame" x="102" y="316" width="197" height="162"/>
+                                <rect key="frame" x="174" y="84" width="135" height="162"/>
                                 <color key="backgroundColor" red="0.050980396568775177" green="0.70588237047195435" blue="0.90196084976196289" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="7Ua-8T-FQ8" id="K2S-tv-zCV"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQ7-UB-gNC">
-                                <rect key="frame" x="21" y="386" width="108" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQ7-UB-gNC">
+                                <rect key="frame" x="72" y="55" width="39" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cr1-s4-JOW">
-                                <rect key="frame" x="138" y="104" width="139" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <rect key="frame" x="16" y="474" width="288" height="30"/>
+                                <color key="backgroundColor" red="0.050980396570000003" green="0.70588237050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -130,8 +151,31 @@
                                     <segue destination="zjh-yr-TWW" kind="push" identifier="openNapCounter" id="zjz-rg-i0H"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xlR-xa-iJ7">
+                                <rect key="frame" x="16" y="285" width="297" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alarm:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYo-eG-7ui">
+                                        <rect key="frame" x="8" y="13" width="54" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5 Min Before Arrival" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B0b-Qj-Kha">
+                                        <rect key="frame" x="70" y="9" width="204" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="minutestyped:" destination="7Ua-8T-FQ8" eventType="editingDidEnd" id="eP3-uu-fhG"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock-lgray" translatesAutoresizingMaskIntoConstraints="NO" id="0cf-ML-lZY">
+                                <rect key="frame" x="98" y="355" width="125" height="90"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.029743789649381985" green="0.087106139174170455" blue="0.43270210597826086" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.90248325890000003" green="0.90248325890000003" blue="0.90248325890000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Take a new Nap" id="5gz-91-aTV"/>
                     <connections>
@@ -142,7 +186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AkH-kD-FTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="643" y="72"/>
+            <point key="canvasLocation" x="643" y="102"/>
         </scene>
         <!--Remaining Nap Time-->
         <scene sceneID="0f8-Ay-7RZ">
@@ -156,16 +200,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4 min : 35 sec" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmo-FT-Wvc">
-                                <rect key="frame" x="-84" y="180" width="488" height="88"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqQ-kQ-W1W">
-                                <rect key="frame" x="34" y="297" width="252" height="30"/>
+                                <rect key="frame" x="33" y="443" width="252" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.050980396570000003" green="0.70588237050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -173,26 +212,44 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Destination" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idY-sp-lz3">
-                                <rect key="frame" x="117" y="114" width="87" height="21"/>
+                                <rect key="frame" x="24" y="125" width="234" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Station Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uc-NQ-6lx">
-                                <rect key="frame" x="47" y="149" width="225" height="21"/>
+                                <rect key="frame" x="24" y="148" width="225" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMa-IH-Zcx">
-                                <rect key="frame" x="34" y="375" width="252" height="30"/>
+                                <rect key="frame" x="34" y="481" width="252" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Favorite">
+                                    <color key="titleColor" red="0.050980396570000003" green="0.70588237050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kdV-2l-ug0">
+                                <rect key="frame" x="16" y="34" width="288" height="83"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock-dgray" translatesAutoresizingMaskIntoConstraints="NO" id="8dv-Th-mpj">
+                                        <rect key="frame" x="8" y="17" width="57" height="49"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4 min : 35 sec" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmo-FT-Wvc">
+                                        <rect key="frame" x="48" y="16" width="232" height="52"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock-lgray" translatesAutoresizingMaskIntoConstraints="NO" id="R2H-7e-HPY">
+                                <rect key="frame" x="39" y="215" width="240" height="128"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.026293965360000001" green="0.077003160419999994" blue="0.38251528530000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.90248325890000003" green="0.90248325890000003" blue="0.90248325890000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Remaining Nap Time" id="Cpa-Da-InS"/>
                     <connections>
@@ -278,7 +335,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1t-fi-VKh">
-                                <rect key="frame" x="61" y="255" width="198" height="36"/>
+                                <rect key="frame" x="67" y="499" width="198" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Return">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -287,43 +344,17 @@
                                     <segue destination="7Ua-8T-FQ8" kind="custom" id="88B-1y-o9s"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bartnaplogo-v1-04" translatesAutoresizingMaskIntoConstraints="NO" id="r4i-uj-pdP">
+                                <rect key="frame" x="40" y="258" width="240" height="128"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.02352272325377236" green="0.068887442711630539" blue="0.34220023777173914" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.90248325890000003" green="0.90248325890000003" blue="0.90248325890000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ees-yU-1VL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WsC-W2-rZQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1479" y="72"/>
-        </scene>
-        <!--BART Timetables-->
-        <scene sceneID="yEt-8J-SQb">
-            <objects>
-                <tableViewController id="FGi-c9-aMY" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Vlu-dK-vpL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <color key="sectionIndexBackgroundColor" red="0.026293965360000001" green="0.077003160419999994" blue="0.38251528530000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="routeCell" id="5PO-mu-aFj">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5PO-mu-aFj" id="WKU-yi-aEg">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="FGi-c9-aMY" id="CrY-9f-2kE"/>
-                            <outlet property="delegate" destination="FGi-c9-aMY" id="FIq-gi-MUB"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="BART Timetables" id="Mvx-Qj-v15"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kmu-NY-kj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="670" y="752"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KQI-G3-fIU">
@@ -347,7 +378,8 @@
     <resources>
         <image name="Bartnaplogo-v1-02" width="400" height="400"/>
         <image name="Bartnaplogo-v1-04" width="400" height="400"/>
-        <image name="train-25.png" width="25" height="25"/>
+        <image name="clock-dgray" width="101" height="95"/>
+        <image name="clock-lgray" width="101" height="95"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -355,6 +387,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="88B-1y-o9s"/>
+        <segue reference="JfP-5E-LMA"/>
     </inferredMetricsTieBreakers>
 </document>
