@@ -153,19 +153,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock-lgray" translatesAutoresizingMaskIntoConstraints="NO" id="0cf-ML-lZY">
                                 <rect key="frame" x="98" y="355" width="125" height="90"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cr1-s4-JOW">
-                                <rect key="frame" x="16" y="532" width="288" height="36"/>
-                                <color key="backgroundColor" red="0.050980396570000003" green="0.70588237050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="Start Old">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="startPressed:" destination="7Ua-8T-FQ8" eventType="touchUpInside" id="8kN-yh-hjr"/>
-                                    <segue destination="zjh-yr-TWW" kind="push" identifier="openNapCounter" id="zjz-rg-i0H"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxx-2C-aFf">
                                 <rect key="frame" x="16" y="254" width="288" height="30"/>
                                 <color key="backgroundColor" red="0.050980396570000003" green="0.70588237050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
@@ -175,7 +162,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startPressed:" destination="7Ua-8T-FQ8" eventType="touchUpInside" id="hDu-sO-gA3"/>
                                     <action selector="startPressedManual:" destination="7Ua-8T-FQ8" eventType="touchUpInside" id="aur-l3-rnl"/>
                                 </connections>
                             </button>
@@ -274,6 +260,7 @@
                     <connections>
                         <outlet property="counterLabel" destination="Dmo-FT-Wvc" id="sXn-na-hn9"/>
                         <outlet property="destinationStationLabel" destination="0Uc-NQ-6lx" id="Czz-ig-6LY"/>
+                        <outlet property="stationsLabel" destination="idY-sp-lz3" id="RIt-A7-uHI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MbV-2X-Bvt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -355,7 +342,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="7Ua-8T-FQ8" kind="push" id="88B-1y-o9s"/>
+                                    <segue destination="7Ua-8T-FQ8" kind="push" identifier="returnTakeANap" id="88B-1y-o9s"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bartnaplogo-v1-04" translatesAutoresizingMaskIntoConstraints="NO" id="r4i-uj-pdP">
@@ -401,7 +388,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="JfP-5E-LMA"/>
-        <segue reference="Jbk-NP-L7b"/>
+        <segue reference="88B-1y-o9s"/>
     </inferredMetricsTieBreakers>
 </document>

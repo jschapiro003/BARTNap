@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		315DE3161A01A64300BC4EB7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315DE3151A01A64300BC4EB7 /* HomeViewController.swift */; };
 		3168E11219FD7C8D0069C520 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168E11119FD7C8D0069C520 /* Station.swift */; };
-		3168E11519FD7FD60069C520 /* EstimatedTimeDeparture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168E11419FD7FD60069C520 /* EstimatedTimeDeparture.swift */; };
 		3168E11719FD7FED0069C520 /* ScheduleInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168E11619FD7FED0069C520 /* ScheduleInformation.swift */; };
 		31726B3B19F2F5B900FDAFE9 /* BARTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31726B3A19F2F5B900FDAFE9 /* BARTClient.swift */; };
 		3187900619EA296500455502 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187900519EA296500455502 /* AppDelegate.swift */; };
@@ -39,7 +38,6 @@
 		2F2A6DDC07254B91119F2502 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		315DE3151A01A64300BC4EB7 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3168E11119FD7C8D0069C520 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
-		3168E11419FD7FD60069C520 /* EstimatedTimeDeparture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimatedTimeDeparture.swift; sourceTree = "<group>"; };
 		3168E11619FD7FED0069C520 /* ScheduleInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleInformation.swift; sourceTree = "<group>"; };
 		31726B3A19F2F5B900FDAFE9 /* BARTClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BARTClient.swift; sourceTree = "<group>"; };
 		3187900019EA296500455502 /* BartNap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BartNap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,7 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				3168E11119FD7C8D0069C520 /* Station.swift */,
-				3168E11419FD7FD60069C520 /* EstimatedTimeDeparture.swift */,
 				3168E11619FD7FED0069C520 /* ScheduleInformation.swift */,
 			);
 			name = Model;
@@ -324,7 +321,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3168E11519FD7FD60069C520 /* EstimatedTimeDeparture.swift in Sources */,
 				31726B3B19F2F5B900FDAFE9 /* BARTClient.swift in Sources */,
 				31F42D7D1A09DBC500444E62 /* SettingsViewController.swift in Sources */,
 				31F42D7B1A088C0100444E62 /* TimeTablesViewController.swift in Sources */,

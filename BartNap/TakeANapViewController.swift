@@ -100,24 +100,23 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
         
     }
     
-    @IBAction func startPressed(sender: AnyObject) {
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Empty warnings
         warningLabel.text = ""
+        
         // Load favorite trip
         if let tripOrigin = defaults.objectForKey("originSelected") as? String{
             println("saved origin:\(tripOrigin)")
+            originSelected = tripOrigin
             if let rowOriginSelected = defaults.objectForKey("rowOriginSelected") as? Int {
                 fromPickerView.selectRow(rowOriginSelected, inComponent: 0, animated: false)
             }
         }
-        
         if let tripDestination = defaults.objectForKey("destinationSelected") as? String{
             println("saved destination: \(tripDestination)")
+            destSelected = tripDestination
             if let rowDestSelected = defaults.objectForKey("rowDestSelected") as? Int {
                 toPickerView.selectRow(rowDestSelected, inComponent: 0, animated: false)
             }
@@ -134,15 +133,16 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
     func passStationsArray(array: Array<Station>) {
         stationsArray = array
     
+        /*//List stations
         for station in stationsArray{
             if let sn = station.name?{
-                //println("station name:\(sn)")
+                println("station name:\(sn)")
             }
         if let sa = station.abbreviation?{
-                //println("station abbreviation \(sa)")
+                println("station abbreviation \(sa)")
             }
         
-        }
+        }*/
     }
 
     // returns the number of 'columns' to display.
@@ -163,14 +163,14 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
         return stationsArray[row].name
-        //return "fila \(row)"
     }
     
-    //Gets the stations selected in pickerviews
+    
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         //Reset previous warnings
         warningLabel.text = ""
+        //Gets the stations selected in pickerviews
         var itemSelected = stationsArray[row].abbreviation
         if pickerView == fromPickerView {
             originSelected = itemSelected
@@ -193,55 +193,6 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
             
         }
         
-        
-        if segue.identifier == "openNapCounter" {
-            //Assing next view controller in segue
-            self.RemainingNapTimeVC = segue.destinationViewController as? RemainingNapTimeViewController
-
-            //Give default values if user don't touch picker view
-            if originSelected == nil {
-                originSelected = stationsArray[0].abbreviation
-            }
-            if destSelected == nil {
-                destSelected = stationsArray[0].abbreviation
-            }
-            
-           
-            
-            
-            //schedules parsing
-            self.legsArray = BARTClient.sharedInstance.getScheduleInfo(originSelected!, dest: destSelected!)
-            
-            
-            
-
-            //This is the time selected
-            println("minutes previous \(self.minutesTextField.text)")
-            
-            
-            //implicitly unwrapped legMaxTrip! could cause crash?
-            var calculatedNapTime = self.legsArray[0].legMaxTrip! - 60*self.minutesTextField.text.toInt()!
-           
-            
-            println("Leg Max Trip: \(self.legsArray[0].legMaxTrip!/60)")
-            println("Nap time \(calculatedNapTime)")
-            
-            //set alert if there is a transfer before destination selected
-            
-            if self.legsArray[0].legTransfercode == "" {thereIsTransfer=false}
-            
-            //Get station destination full name
-            
-            for station in stationsArray{
-                if self.legsArray[0].legDestination == station.abbreviation?{
-                    destinationName = station.name!
-                }
-            }
-            
-            self.RemainingNapTimeVC?.passNapData(originSelected!, destination: destSelected!, napTime: calculatedNapTime, stopStation: self.legsArray[0].legDestination!, stopStationName: destinationName, transfer: thereIsTransfer)
-
-        }
-        
         if segue.identifier == "showFavorites"{
             
             self.settingsViewController = segue.destinationViewController as? SettingsViewController
@@ -253,7 +204,5 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
     
 }
 
-
-//if the nap time is < 0 
 
 

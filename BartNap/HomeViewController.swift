@@ -31,12 +31,9 @@ class HomeViewController: UIViewController {
 
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
             
-            self.stationsArray = BARTClient.sharedInstance.getStations()
-            //Test schedules parsing
-            //self.legsArray = BARTClient.sharedInstance.getScheduleInfo("DBRK",dest:"ROCK")
-            
+            self.stationsArray = BARTClient.sharedInstance.getStations()            
         });
-        // Do any additional setup after loading the view.
+
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

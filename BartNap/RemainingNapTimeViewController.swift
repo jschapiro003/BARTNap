@@ -17,12 +17,14 @@ class RemainingNapTimeViewController: UIViewController, SendNapParams, MZTimerLa
 
     @IBOutlet weak var counterLabel: UILabel!
     
+    @IBOutlet weak var stationsLabel: UILabel!
+    
     var orig:String?
     var dest:String?
     var legStopStation:String?
     var stopStationLongName:String?
     var minutes:Int?
-    var transferAlert:Bool?
+    var transferAlert:Bool = false
     
     
     
@@ -36,7 +38,11 @@ class RemainingNapTimeViewController: UIViewController, SendNapParams, MZTimerLa
         mycountdownTimer.setCountDownTime(Double(minutes!))
         mycountdownTimer.delegate = self
         mycountdownTimer.start()
-        
+        if self.transferAlert{
+            stationsLabel.text = "Transfer destination"
+        } else {
+            stationsLabel.text = "Destination"
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -45,7 +51,6 @@ class RemainingNapTimeViewController: UIViewController, SendNapParams, MZTimerLa
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
