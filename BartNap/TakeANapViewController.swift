@@ -106,24 +106,26 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
         //Empty warnings
         warningLabel.text = ""
         
+    }
+   
+    override func viewWillAppear(animated: Bool) {
+        
         // Load favorite trip
         if let tripOrigin = defaults.objectForKey("originSelected") as? String{
             println("saved origin:\(tripOrigin)")
             originSelected = tripOrigin
-            if let rowOriginSelected = defaults.objectForKey("rowOriginSelected") as? Int {
-                fromPickerView.selectRow(rowOriginSelected, inComponent: 0, animated: false)
-            }
+            let rowOriginSelected = defaults.integerForKey("rowOriginSelected")
+            fromPickerView.selectRow(rowOriginSelected, inComponent: 0, animated: false)
         }
         if let tripDestination = defaults.objectForKey("destinationSelected") as? String{
             println("saved destination: \(tripDestination)")
             destSelected = tripDestination
-            if let rowDestSelected = defaults.objectForKey("rowDestSelected") as? Int {
-                toPickerView.selectRow(rowDestSelected, inComponent: 0, animated: false)
-            }
+            let rowDestSelected = defaults.integerForKey("rowDestSelected")
+            toPickerView.selectRow(rowDestSelected, inComponent: 0, animated: false)
         }
         
     }
-   
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
