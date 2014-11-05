@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcq-8C-ZR6">
-                                <rect key="frame" x="41" y="452" width="225" height="37"/>
+                                <rect key="frame" x="41" y="386" width="225" height="37"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Start a New Trip">
                                     <color key="titleColor" red="0.050980396570000003" green="0.70588237050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
@@ -27,20 +27,23 @@
                                     <segue destination="7Ua-8T-FQ8" kind="push" identifier="showTakeANap" id="JfP-5E-LMA"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bartnaplogo-v1-02" translatesAutoresizingMaskIntoConstraints="NO" id="pvq-vf-ouA">
+                                <rect key="frame" x="16" y="41" width="288" height="258"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bartnaplogo-v1-04" translatesAutoresizingMaskIntoConstraints="NO" id="uEF-II-Sfs">
+                                <rect key="frame" x="33" y="192" width="240" height="219"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRK-JW-dAc">
-                                <rect key="frame" x="41" y="497" width="225" height="37"/>
+                                <rect key="frame" x="41" y="431" width="225" height="37"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="View Timetables">
                                     <color key="titleColor" red="0.050980396570000003" green="0.70588237050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="o8X-rO-ayz" kind="push" id="Szr-R9-TcT"/>
+                                    <segue destination="6ng-pd-BBQ" kind="push" id="aLN-qf-Mp7"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bartnaplogo-v1-02" translatesAutoresizingMaskIntoConstraints="NO" id="pvq-vf-ouA">
-                                <rect key="frame" x="16" y="162" width="288" height="258"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.9024832589285714" green="0.9024832589285714" blue="0.9024832589285714" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -51,38 +54,38 @@
             <point key="canvasLocation" x="251" y="351"/>
         </scene>
         <!--Time Tables View Controller-->
-        <scene sceneID="3G4-Cc-QsI">
+        <scene sceneID="4b5-qD-xy9">
             <objects>
-                <viewController id="o8X-rO-ayz" customClass="TimeTablesViewController" customModule="BartNap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6ng-pd-BBQ" customClass="TimeTablesViewController" customModule="BartNap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0tU-AN-dJd"/>
-                        <viewControllerLayoutGuide type="bottom" id="p7E-Jo-hee"/>
+                        <viewControllerLayoutGuide type="top" id="GWS-Bs-50z"/>
+                        <viewControllerLayoutGuide type="bottom" id="qpN-by-2Ub"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="KA8-6g-fCc">
+                    <view key="view" contentMode="scaleToFill" id="iKm-Cs-vdS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l5c-ly-z6g">
-                                <rect key="frame" x="0.0" y="-5" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="x6j-BO-Yw0"/>
-                                </items>
-                            </navigationBar>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cj1-8E-lUs">
-                                <rect key="frame" x="0.0" y="64" width="327" height="529"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5hB-Zm-Isw">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5hB-Zm-Isw" firstAttribute="leading" secondItem="iKm-Cs-vdS" secondAttribute="leading" id="3D3-wL-59N"/>
+                            <constraint firstItem="5hB-Zm-Isw" firstAttribute="top" secondItem="GWS-Bs-50z" secondAttribute="bottom" id="Mgf-Ga-iOg"/>
+                            <constraint firstAttribute="trailing" secondItem="5hB-Zm-Isw" secondAttribute="trailing" id="N4L-Vr-Ztg"/>
+                            <constraint firstItem="5hB-Zm-Isw" firstAttribute="bottom" secondItem="qpN-by-2Ub" secondAttribute="top" id="ll8-vM-uWL"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gxe-5d-xOg"/>
+                    <navigationItem key="navigationItem" id="cxO-Yn-cKc"/>
                     <connections>
-                        <outlet property="timeTableWebView" destination="cj1-8E-lUs" id="lGF-Sb-YWk"/>
+                        <outlet property="timeTablesWebView" destination="5hB-Zm-Isw" id="QC7-z6-d8L"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hmt-bN-LNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fMe-5p-VXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="643" y="774"/>
+            <point key="canvasLocation" x="674" y="739"/>
         </scene>
         <!--Take A New Nap-->
         <scene sceneID="Dnr-Px-sF4">
@@ -103,38 +106,30 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iI-bz-NBs">
-                                <rect key="frame" x="218" y="55" width="108" height="21"/>
+                                <rect key="frame" x="9" y="194" width="47" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView opaque="NO" tag="101" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="88W-en-MOB">
-                                <rect key="frame" x="12" y="84" width="135" height="162"/>
+                                <rect key="frame" x="54" y="124" width="255" height="162"/>
                                 <color key="backgroundColor" red="0.050980396568775177" green="0.70588237047195435" blue="0.90196084976196289" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="7Ua-8T-FQ8" id="OzP-tN-KXn"/>
                                 </connections>
                             </pickerView>
-                            <pickerView opaque="NO" tag="102" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pmE-hX-S1i">
-                                <rect key="frame" x="174" y="84" width="135" height="162"/>
-                                <color key="backgroundColor" red="0.050980396568775177" green="0.70588237047195435" blue="0.90196084976196289" alpha="1" colorSpace="deviceRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="delegate" destination="7Ua-8T-FQ8" id="K2S-tv-zCV"/>
-                                </connections>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQ7-UB-gNC">
-                                <rect key="frame" x="72" y="55" width="39" height="21"/>
+                                <rect key="frame" x="9" y="364" width="39" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xlR-xa-iJ7">
-                                <rect key="frame" x="12" y="292" width="297" height="44"/>
+                                <rect key="frame" x="12" y="72" width="297" height="44"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5 Min Before Arrival" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B0b-Qj-Kha">
-                                        <rect key="frame" x="70" y="9" width="204" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Min Before Arrival" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B0b-Qj-Kha">
+                                        <rect key="frame" x="55" y="9" width="147" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -147,26 +142,34 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxx-2C-aFf">
+                                        <rect key="frame" x="210" y="9" width="79" height="30"/>
+                                        <color key="backgroundColor" red="0.050980396570000003" green="0.70588237050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Start">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startPressedManual:" destination="7Ua-8T-FQ8" eventType="touchUpInside" id="aur-l3-rnl"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock-lgray" translatesAutoresizingMaskIntoConstraints="NO" id="0cf-ML-lZY">
-                                <rect key="frame" x="98" y="355" width="125" height="90"/>
+                                <rect key="frame" x="98" y="464" width="125" height="96"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxx-2C-aFf">
-                                <rect key="frame" x="16" y="254" width="288" height="30"/>
-                                <color key="backgroundColor" red="0.050980396570000003" green="0.70588237050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="Start">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <pickerView opaque="NO" tag="102" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pmE-hX-S1i">
+                                <rect key="frame" x="54" y="294" width="255" height="162"/>
+                                <color key="backgroundColor" red="0.050980396568775177" green="0.70588237047195435" blue="0.90196084976196289" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <action selector="startPressedManual:" destination="7Ua-8T-FQ8" eventType="touchUpInside" id="aur-l3-rnl"/>
+                                    <outlet property="delegate" destination="7Ua-8T-FQ8" id="K2S-tv-zCV"/>
                                 </connections>
-                            </button>
+                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WARNING" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgM-Z1-2bA">
-                                <rect key="frame" x="15" y="344" width="287" height="86"/>
+                                <rect key="frame" x="12" y="464" width="287" height="86"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.92454993210000003" green="0.41467134770000003" blue="0.19035674020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -175,7 +178,7 @@
                         <color key="backgroundColor" red="0.90248325890000003" green="0.90248325890000003" blue="0.90248325890000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Take A New Nap" id="5gz-91-aTV">
-                        <barButtonItem key="rightBarButtonItem" title="Favorites" id="n3J-4h-MaO">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="n3J-4h-MaO">
                             <connections>
                                 <segue destination="bpf-Rd-Cun" kind="push" identifier="showFavorites" id="OGo-Ur-rxB"/>
                             </connections>
@@ -206,8 +209,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqQ-kQ-W1W">
-                                <rect key="frame" x="33" y="443" width="252" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="33" y="235" width="252" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="0.050980396570000003" green="0.70588237050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -219,23 +222,15 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Destination" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idY-sp-lz3">
                                 <rect key="frame" x="24" y="183" width="234" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Station Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uc-NQ-6lx">
                                 <rect key="frame" x="24" y="206" width="225" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMa-IH-Zcx">
-                                <rect key="frame" x="34" y="481" width="252" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Favorite">
-                                    <color key="titleColor" red="0.050980396570000003" green="0.70588237050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kdV-2l-ug0">
                                 <rect key="frame" x="16" y="92" width="288" height="83"/>
                                 <subviews>
@@ -251,7 +246,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock-lgray" translatesAutoresizingMaskIntoConstraints="NO" id="R2H-7e-HPY">
-                                <rect key="frame" x="39" y="215" width="240" height="196"/>
+                                <rect key="frame" x="39" y="282" width="240" height="196"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.90248325890000003" green="0.90248325890000003" blue="0.90248325890000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -280,30 +275,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView opaque="NO" tag="102" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M6V-Jg-58d">
-                                <rect key="frame" x="16" y="116" width="135" height="162"/>
+                                <rect key="frame" x="52" y="116" width="252" height="162"/>
                                 <color key="backgroundColor" red="0.050980396570000003" green="0.70588237050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="7Ua-8T-FQ8" id="xKE-j4-npN"/>
                                 </connections>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9d-Ob-H5i">
-                                <rect key="frame" x="57" y="487" width="212" height="30"/>
-                                <state key="normal" title="Save as Favorite">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveAsFavorite:" destination="bpf-Rd-Cun" eventType="touchUpInside" id="c9I-Ht-h9Y"/>
-                                </connections>
-                            </button>
                             <pickerView opaque="NO" tag="101" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n28-NG-UGX">
-                                <rect key="frame" x="169" y="116" width="135" height="162"/>
+                                <rect key="frame" x="52" y="286" width="252" height="162"/>
                                 <color key="backgroundColor" red="0.050980396570000003" green="0.70588237050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="7Ua-8T-FQ8" id="A2q-hA-JEb"/>
                                 </connections>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default trip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nc2-lC-mk1">
+                                <rect key="frame" x="115" y="72" width="90" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ooe-B9-sgW">
+                                <rect key="frame" x="7" y="186" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDI-VJ-JZ1">
+                                <rect key="frame" x="7" y="356" width="39" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9d-Ob-H5i">
+                                <rect key="frame" x="54" y="518" width="212" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveAsFavorite:" destination="bpf-Rd-Cun" eventType="touchUpInside" id="c9I-Ht-h9Y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90248325890000003" green="0.90248325890000003" blue="0.90248325890000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -346,7 +360,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bartnaplogo-v1-04" translatesAutoresizingMaskIntoConstraints="NO" id="r4i-uj-pdP">
-                                <rect key="frame" x="40" y="258" width="240" height="128"/>
+                                <rect key="frame" x="40" y="197" width="240" height="219"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.90248325890000003" green="0.90248325890000003" blue="0.90248325890000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -388,6 +402,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="88B-1y-o9s"/>
+        <segue reference="JfP-5E-LMA"/>
     </inferredMetricsTieBreakers>
 </document>

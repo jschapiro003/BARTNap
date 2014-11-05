@@ -11,34 +11,21 @@ import UIKit
 class TimeTablesViewController: UIViewController {
 
     let url = "http://www.bart.gov/schedules/bystation"
-    @IBOutlet weak var timeTableWebView: UIWebView!
     
+    @IBOutlet weak var timeTablesWebView: UIWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let requestURL = NSURL(string:url)
         let request = NSURLRequest(URL: requestURL!)
-        timeTableWebView.loadRequest(request)
-        // Do any additional setup after loading the view.
-        
-        self.view = self.timeTableWebView
+        timeTablesWebView.loadRequest(request)
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
 
 }
