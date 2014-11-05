@@ -113,13 +113,13 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
                 destSelected = stationsArray[0].abbreviation
             }
             
-            //*******I think this should be done in the background and not on the main thread!!****/////
+           
             
             
             //schedules parsing
             self.legsArray = BARTClient.sharedInstance.getScheduleInfo(originSelected!, dest: destSelected!)
             
-             //************************************************************************************///
+            
             
 
             //This is the time selected
@@ -152,6 +152,6 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
 }
 
 
-
+//if the nap time is < 0 
 
 

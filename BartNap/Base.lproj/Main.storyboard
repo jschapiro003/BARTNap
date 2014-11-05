@@ -138,8 +138,31 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xlR-xa-iJ7">
+                                <rect key="frame" x="16" y="440" width="297" height="44"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5 Min Before Arrival" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B0b-Qj-Kha">
+                                        <rect key="frame" x="70" y="9" width="204" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="minutestyped:" destination="7Ua-8T-FQ8" eventType="editingDidEnd" id="eP3-uu-fhG"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alarm:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYo-eG-7ui">
+                                        <rect key="frame" x="8" y="13" width="54" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock-lgray" translatesAutoresizingMaskIntoConstraints="NO" id="0cf-ML-lZY">
+                                <rect key="frame" x="98" y="355" width="125" height="90"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cr1-s4-JOW">
-                                <rect key="frame" x="16" y="474" width="288" height="30"/>
+                                <rect key="frame" x="20" y="264" width="288" height="30"/>
                                 <color key="backgroundColor" red="0.050980396570000003" green="0.70588237050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Start">
@@ -151,29 +174,6 @@
                                     <segue destination="zjh-yr-TWW" kind="push" identifier="openNapCounter" id="zjz-rg-i0H"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xlR-xa-iJ7">
-                                <rect key="frame" x="16" y="285" width="297" height="44"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alarm:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYo-eG-7ui">
-                                        <rect key="frame" x="8" y="13" width="54" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5 Min Before Arrival" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B0b-Qj-Kha">
-                                        <rect key="frame" x="70" y="9" width="204" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="minutestyped:" destination="7Ua-8T-FQ8" eventType="editingDidEnd" id="eP3-uu-fhG"/>
-                                        </connections>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock-lgray" translatesAutoresizingMaskIntoConstraints="NO" id="0cf-ML-lZY">
-                                <rect key="frame" x="98" y="355" width="125" height="90"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.90248325890000003" green="0.90248325890000003" blue="0.90248325890000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
