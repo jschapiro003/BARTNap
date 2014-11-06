@@ -16,14 +16,29 @@ class SettingsViewController: UIViewController,UIPickerViewDelegate {
     var rowOriginSelected:Int = 0
     var destSelected:String?
     var rowDestSelected:Int = 0
+    var defaultTripTime:Int? = 2
+    
+    @IBAction func onTap(sender: AnyObject) {
+        self.view.endEditing(true)
+    }
+
+    
+    @IBAction func timeEditingChanged(sender: AnyObject) {
+        defaultTripTime = minutesPrevious.text.toInt()
+    }
     
     @IBOutlet weak var toFavoritesPickerView: UIPickerView!
     
     @IBOutlet weak var fromFavoritesPickerView: UIPickerView!
     
+    @IBOutlet weak var minutesPrevious: UITextField!
+    
+    @IBOutlet weak var warningLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        warningLabel.text = ""
         
         toFavoritesPickerView.delegate = self
         fromFavoritesPickerView.delegate = self
@@ -47,6 +62,10 @@ class SettingsViewController: UIViewController,UIPickerViewDelegate {
             }
         }
         
+        let minutesSelected = defaults.integerForKey("defaultTripTime")
+        minutesPrevious.text = String(minutesSelected) as String?
+        self.defaultTripTime = minutesSelected
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -92,10 +111,6 @@ class SettingsViewController: UIViewController,UIPickerViewDelegate {
         }
     }
     
-    /*func selectRow(row: Int, inComponent component: Int, animated: Bool) {
-    
-    }*/
-    
     @IBAction func saveAsFavorite(sender: AnyObject) {
         
         //Give default values if user don't touch picker view
@@ -119,7 +134,13 @@ class SettingsViewController: UIViewController,UIPickerViewDelegate {
             defaults.setObject(destinationSelected, forKey: "destinationSelected")
             defaults.setObject(self.rowDestSelected, forKey: "rowDestSelected")
         }
-        
+        self.defaultTripTime = minutesPrevious.text.toInt()
+        if self.defaultTripTime > 1 {
+            defaults.setObject(self.defaultTripTime, forKey: "defaultTripTime")
+            self.warningLabel.text = ""
+        } else {
+            warningLabel.text = "Minimum time is 2 minutes"
+        }
     }
 
 }

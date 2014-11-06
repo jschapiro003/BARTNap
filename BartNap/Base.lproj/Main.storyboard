@@ -131,7 +131,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Min Before Arrival" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B0b-Qj-Kha">
                                         <rect key="frame" x="55" y="9" width="147" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <connections>
                                             <action selector="minutestyped:" destination="7Ua-8T-FQ8" eventType="editingDidEnd" id="eP3-uu-fhG"/>
                                         </connections>
@@ -176,6 +176,10 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90248325890000003" green="0.90248325890000003" blue="0.90248325890000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="VAn-di-CNZ" appends="YES" id="h64-WT-v6y"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Take A New Nap" id="5gz-91-aTV">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="n3J-4h-MaO">
@@ -193,6 +197,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AkH-kD-FTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="VAn-di-CNZ">
+                    <connections>
+                        <action selector="onTap:" destination="7Ua-8T-FQ8" id="kol-ND-hS0"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="643" y="102"/>
         </scene>
@@ -275,7 +284,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView opaque="NO" tag="102" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M6V-Jg-58d">
-                                <rect key="frame" x="52" y="116" width="252" height="162"/>
+                                <rect key="frame" x="52" y="120" width="252" height="162"/>
                                 <color key="backgroundColor" red="0.050980396570000003" green="0.70588237050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -290,14 +299,8 @@
                                     <outlet property="delegate" destination="7Ua-8T-FQ8" id="A2q-hA-JEb"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default trip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nc2-lC-mk1">
-                                <rect key="frame" x="115" y="72" width="90" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ooe-B9-sgW">
-                                <rect key="frame" x="7" y="186" width="47" height="21"/>
+                                <rect key="frame" x="7" y="190" width="47" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -318,16 +321,60 @@
                                     <action selector="saveAsFavorite:" destination="bpf-Rd-Cun" eventType="touchUpInside" id="c9I-Ht-h9Y"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sTB-eb-XFI">
+                                <rect key="frame" x="7" y="72" width="297" height="44"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Min Before Arrival" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ba6-A4-4kW">
+                                        <rect key="frame" x="55" y="9" width="147" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <connections>
+                                            <action selector="minutestyped:" destination="7Ua-8T-FQ8" eventType="editingDidEnd" id="yiE-7u-Yvr"/>
+                                            <action selector="timeEditingChanged:" destination="bpf-Rd-Cun" eventType="editingChanged" id="ZRf-qw-sO2"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alarm:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAZ-Rj-4Gz">
+                                        <rect key="frame" x="8" y="13" width="54" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default trip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nc2-lC-mk1">
+                                        <rect key="frame" x="208" y="13" width="87" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WARNING" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ve-7K-tuR">
+                                <rect key="frame" x="16" y="456" width="287" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.92454993210000003" green="0.41467134770000003" blue="0.19035674020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90248325890000003" green="0.90248325890000003" blue="0.90248325890000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Uji-vU-JtH" appends="YES" id="aNC-YD-aXt"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="NpI-yt-o6u"/>
                     <connections>
                         <outlet property="fromFavoritesPickerView" destination="M6V-Jg-58d" id="p8s-MN-heJ"/>
+                        <outlet property="minutesPrevious" destination="Ba6-A4-4kW" id="LFs-o6-jCO"/>
                         <outlet property="toFavoritesPickerView" destination="n28-NG-UGX" id="1IN-Zo-uEA"/>
+                        <outlet property="warningLabel" destination="0Ve-7K-tuR" id="Gp0-Gc-afN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9QN-Ze-dqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Uji-vU-JtH">
+                    <connections>
+                        <action selector="onTap:" destination="bpf-Rd-Cun" id="Wkt-Zk-m2t"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1055" y="-647"/>
         </scene>

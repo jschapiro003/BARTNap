@@ -48,6 +48,11 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
     
     @IBOutlet weak var warningLabel: UILabel!
     
+    @IBAction func onTap(sender: AnyObject) {
+        println("tapped")
+        self.view.endEditing(true)
+    }
+    
     @IBAction func startPressedManual(sender: AnyObject) {
         
         //Give default values if user don't touch picker view
@@ -124,6 +129,8 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
             toPickerView.selectRow(rowDestSelected, inComponent: 0, animated: false)
         }
         
+        let minutesSelected = defaults.integerForKey("defaultTripTime")
+        minutesTextField.text = String(minutesSelected) as String?
     }
     
 
