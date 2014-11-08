@@ -142,16 +142,6 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
     func passStationsArray(array: Array<Station>) {
         stationsArray = array
     
-        /*//List stations
-        for station in stationsArray{
-            if let sn = station.name?{
-                println("station name:\(sn)")
-            }
-        if let sa = station.abbreviation?{
-                println("station abbreviation \(sa)")
-            }
-        
-        }*/
     }
 
     // returns the number of 'columns' to display.

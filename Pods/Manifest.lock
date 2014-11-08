@@ -1,10 +1,13 @@
 PODS:
+  - MBProgressHUD (0.9)
   - MZTimerLabel (0.4.4)
 
 DEPENDENCIES:
+  - MBProgressHUD (~> 0.8)
   - MZTimerLabel (~> 0.4.4)
 
 SPEC CHECKSUMS:
+  MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
   MZTimerLabel: e3088c90eb78bdda642651b818ec8ed22e0a8f4d
 
 COCOAPODS: 0.34.4
