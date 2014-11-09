@@ -12,16 +12,14 @@ import AVFoundation
 class allDoneViewController: UIViewController {
     
     var audioPlayer = AVAudioPlayer()
-
-    @IBAction func stopAlarmButton(sender: AnyObject) {
+    
+    @IBAction func dismissModalButton(sender: AnyObject) {
         if audioPlayer.playing {
             audioPlayer.stop()
         }
-    }
-    
-    @IBAction func dismissModalButton(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         playAlarmSound()

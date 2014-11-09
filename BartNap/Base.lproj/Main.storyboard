@@ -93,7 +93,7 @@
             </objects>
             <point key="canvasLocation" x="674" y="739"/>
         </scene>
-        <!--Take a Nap-->
+        <!--Take a new Nap-->
         <scene sceneID="Dnr-Px-sF4">
             <objects>
                 <viewController id="7Ua-8T-FQ8" customClass="TakeANapViewController" customModule="BartNap" customModuleProvider="target" sceneMemberID="viewController">
@@ -187,7 +187,7 @@
                             <outletCollection property="gestureRecognizers" destination="VAn-di-CNZ" appends="YES" id="h64-WT-v6y"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Take a Nap" id="5gz-91-aTV">
+                    <navigationItem key="navigationItem" title="Take a new Nap" id="5gz-91-aTV">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="n3J-4h-MaO">
                             <connections>
                                 <segue destination="bpf-Rd-Cun" kind="push" identifier="showFavorites" id="OGo-Ur-rxB"/>
@@ -392,25 +392,14 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ax0-Wr-ose">
-                                <rect key="frame" x="61" y="390" width="198" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Stop Alarm">
-                                    <color key="titleColor" red="0.92454993210000003" green="0.41467134770000003" blue="0.19035674020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="stopAlarmButton:" destination="CLY-q3-MuD" eventType="touchUpInside" id="oHx-Zd-NPh"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bartnaplogo-v1-04" translatesAutoresizingMaskIntoConstraints="NO" id="r4i-uj-pdP">
                                 <rect key="frame" x="40" y="193" width="240" height="219"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4U4-bh-Gtq">
-                                <rect key="frame" x="61" y="445" width="198" height="36"/>
+                                <rect key="frame" x="61" y="420" width="198" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Return">
-                                    <color key="titleColor" red="0.050980396570000003" green="0.70588237050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Stop Alarm">
+                                    <color key="titleColor" red="0.92454993210000003" green="0.41467134770000003" blue="0.19035674020000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
