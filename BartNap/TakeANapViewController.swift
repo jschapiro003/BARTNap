@@ -73,7 +73,7 @@ class TakeANapViewController: UIViewController, UIPickerViewDelegate, SendDataDe
             if !self.legsArray.isEmpty {
                 //If there are legs, use first one
                 calculatedNapTimeManual = self.legsArray[0].legMaxTrip! - 60*self.minutesTextField.text.toInt()!
-                //Temporary counter modification
+                //Temporary counter modification for testing
                 //calculatedNapTimeManual = 30
                 //set alert if there is a transfer before destination selected
                 if self.legsArray[0].legTransfercode == "" {
