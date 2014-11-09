@@ -7,18 +7,37 @@
 //
 
 import UIKit
+import AVFoundation
 
 class allDoneViewController: UIViewController {
+    
+    var audioPlayer = AVAudioPlayer()
 
+    @IBAction func stopAlarmButton(sender: AnyObject) {
+        if audioPlayer.playing {
+            audioPlayer.stop()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        playAlarmSound()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
 
+    func playAlarmSound() {
+        var alertSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("233645__zanox__alarm-clock-digital", ofType: "wav")!)
+        println(alertSound)
+        
+        var error:NSError?
+        audioPlayer = AVAudioPlayer(contentsOfURL: alertSound, error: &error)
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
+        
+    }
+    
 }

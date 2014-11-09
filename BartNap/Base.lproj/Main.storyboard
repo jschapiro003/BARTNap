@@ -102,14 +102,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iI-bz-NBs">
-                                <rect key="frame" x="9" y="231" width="47" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <pickerView opaque="NO" tag="101" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="88W-en-MOB">
-                                <rect key="frame" x="54" y="161" width="255" height="162"/>
+                                <rect key="frame" x="54" y="196" width="255" height="162"/>
                                 <color key="backgroundColor" red="0.050980396568775177" green="0.70588237047195435" blue="0.90196084976196289" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -163,14 +157,20 @@
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WARNING" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgM-Z1-2bA">
-                                <rect key="frame" x="16" y="100" width="287" height="86"/>
+                                <rect key="frame" x="16" y="114" width="287" height="86"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.92454993210000003" green="0.41467134770000003" blue="0.19035674020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock-lgray" translatesAutoresizingMaskIntoConstraints="NO" id="0cf-ML-lZY">
-                                <rect key="frame" x="163" y="331" width="37" height="31"/>
+                                <rect key="frame" x="163" y="347" width="37" height="31"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iI-bz-NBs">
+                                <rect key="frame" x="9" y="266" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90248325890000003" green="0.90248325890000003" blue="0.90248325890000003" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -388,7 +388,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How Was Your Nap?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jwk-w8-pks">
-                                <rect key="frame" x="34" y="74" width="264" height="144"/>
+                                <rect key="frame" x="28" y="71" width="264" height="144"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -403,8 +403,19 @@
                                     <segue destination="7Ua-8T-FQ8" kind="push" identifier="returnTakeANap" id="88B-1y-o9s"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ax0-Wr-ose">
+                                <rect key="frame" x="61" y="390" width="198" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Stop Alarm">
+                                    <color key="titleColor" red="0.92454993210000003" green="0.41467134770000003" blue="0.19035674020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopAlarmButton:" destination="CLY-q3-MuD" eventType="touchUpInside" id="oHx-Zd-NPh"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bartnaplogo-v1-04" translatesAutoresizingMaskIntoConstraints="NO" id="r4i-uj-pdP">
-                                <rect key="frame" x="40" y="197" width="240" height="219"/>
+                                <rect key="frame" x="40" y="193" width="240" height="219"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.90248325890000003" green="0.90248325890000003" blue="0.90248325890000003" alpha="1" colorSpace="calibratedRGB"/>

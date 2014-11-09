@@ -20,6 +20,7 @@
 		31F42D7B1A088C0100444E62 /* TimeTablesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F42D7A1A088C0000444E62 /* TimeTablesViewController.swift */; };
 		31F42D7D1A09DBC500444E62 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F42D7C1A09DBC500444E62 /* SettingsViewController.swift */; };
 		BEE5241A7F3976F47E87AD9F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ED5F96E54B12B72F1BC1BE /* libPods.a */; };
+		F81E60C21A0F6C19001025CC /* 233645__zanox__alarm-clock-digital.wav in Resources */ = {isa = PBXBuildFile; fileRef = F81E60C11A0F6C19001025CC /* 233645__zanox__alarm-clock-digital.wav */; };
 		F85312F51A06C00A000BB841 /* RemainingNapTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85312F41A06C00A000BB841 /* RemainingNapTimeViewController.swift */; };
 		F8BB8C1B1A084D8700C483E7 /* allDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BB8C1A1A084D8700C483E7 /* allDoneViewController.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		31F42D7C1A09DBC500444E62 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		52ED5F96E54B12B72F1BC1BE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6166F54374392ABB28F0D4B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F81E60C11A0F6C19001025CC /* 233645__zanox__alarm-clock-digital.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "233645__zanox__alarm-clock-digital.wav"; sourceTree = "<group>"; };
 		F85312F41A06C00A000BB841 /* RemainingNapTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemainingNapTimeViewController.swift; sourceTree = "<group>"; };
 		F8BB8C151A08399100C483E7 /* BartNap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BartNap-Bridging-Header.h"; sourceTree = "<group>"; };
 		F8BB8C1A1A084D8700C483E7 /* allDoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = allDoneViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		3187900219EA296500455502 /* BartNap */ = {
 			isa = PBXGroup;
 			children = (
+				F81E60C01A0F65A5001025CC /* Sounds */,
 				31898B471A02FEB5009BC1DA /* Controllers */,
 				31898B461A02FDC6009BC1DA /* API */,
 				3168E11319FD7F9A0069C520 /* Model */,
@@ -184,6 +187,14 @@
 				52ED5F96E54B12B72F1BC1BE /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F81E60C01A0F65A5001025CC /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				F81E60C11A0F6C19001025CC /* 233645__zanox__alarm-clock-digital.wav */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +281,7 @@
 			files = (
 				3187900B19EA296500455502 /* Main.storyboard in Resources */,
 				3187901019EA296500455502 /* LaunchScreen.xib in Resources */,
+				F81E60C21A0F6C19001025CC /* 233645__zanox__alarm-clock-digital.wav in Resources */,
 				3187900D19EA296500455502 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
