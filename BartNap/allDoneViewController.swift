@@ -19,6 +19,9 @@ class allDoneViewController: UIViewController {
         }
     }
     
+    @IBAction func dismissModalButton(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         playAlarmSound()

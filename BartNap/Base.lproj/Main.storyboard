@@ -262,6 +262,7 @@
                         <outlet property="counterLabel" destination="Dmo-FT-Wvc" id="sXn-na-hn9"/>
                         <outlet property="destinationStationLabel" destination="0Uc-NQ-6lx" id="Czz-ig-6LY"/>
                         <outlet property="stationsLabel" destination="idY-sp-lz3" id="RIt-A7-uHI"/>
+                        <segue destination="CLY-q3-MuD" kind="modal" identifier="openAllDoneModal" id="Yqc-Hw-GKs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MbV-2X-Bvt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -417,6 +418,16 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bartnaplogo-v1-04" translatesAutoresizingMaskIntoConstraints="NO" id="r4i-uj-pdP">
                                 <rect key="frame" x="40" y="193" width="240" height="219"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4U4-bh-Gtq">
+                                <rect key="frame" x="61" y="445" width="198" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissModalButton:" destination="CLY-q3-MuD" eventType="touchUpInside" id="KLR-0M-yvR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90248325890000003" green="0.90248325890000003" blue="0.90248325890000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -458,5 +469,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="88B-1y-o9s"/>
+        <segue reference="pCX-Gl-UKg"/>
     </inferredMetricsTieBreakers>
 </document>

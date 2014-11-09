@@ -55,7 +55,7 @@ class RemainingNapTimeViewController: UIViewController, SendNapParams, MZTimerLa
     
     
     func timerLabel(timerLabel: AnyObject!, finshedCountDownTimerWithTime countTime: NSTimeInterval){
-        performSegueWithIdentifier("openAllDone", sender: self)
+        performSegueWithIdentifier("openAllDoneModal", sender: self)
         
     }
     
