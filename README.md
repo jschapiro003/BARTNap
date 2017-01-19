@@ -9,4 +9,4 @@ Select your origin, destination and time before arrival for the alarm, the app w
 
 ## Demo
 
-![BARTNap Demo](https://dl.dropboxusercontent.com/u/15652960/BARTNap.gif)
+![BARTNap Demo](https://github.com/jschapiro003/BARTNap/blob/master/BARTNap.gif)
